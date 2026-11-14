@@ -1,0 +1,17 @@
+PixelCake website
+
+Copyright © 2025–2026 Phil-pje (https://github.com/Phil-pje).
+All rights reserved.
+
+This repository holds the website of PixelCake: its texts, its drawings,
+its pictures, and the PixelCake name and logo. You are welcome to read the
+source and to learn from it. Copying, republishing or reusing the texts,
+the drawings, the pictures or the logo needs the author's permission:
+pixelcake.dev@gmail.com
+
+PixelCake itself, the application, is free software, released under the
+GNU Affero General Public License v3.0: https://github.com/pixelcake-dev
+
+The typefaces in assets/fonts are not covered by this notice. Inter and
+JetBrains Mono are distributed under the SIL Open Font License 1.1; the
+licence of each is next to its files.

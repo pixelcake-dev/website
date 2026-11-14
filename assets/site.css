@@ -1,0 +1,1064 @@
+/* PixelCake — the two pages of the site share this sheet.
+   Twelve columns, one typeface, one accent, no rounded corners.
+   The title of a section sits in the margin (columns 1-3), its content
+   in the body (columns 4-12). A whole screen of the app spans the grid;
+   a detail sits next to the text that speaks of it.
+
+   Two themes. Light is the default, dark follows the computer, and the
+   button in the masthead (site.js) lets the visitor choose. */
+
+/* The two typefaces are served from the site itself (assets/fonts, with
+   their licences): the pages ask nothing of anyone else. */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('./fonts/inter-latin-wght-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+        U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+        U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+        U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* The colours are those of the logo: orange, graphite for the text on
+   white, ice white for the text on black. The greys lean to the slate of
+   the logo, never to yellow. */
+:root {
+    --paper: #ffffff;
+    --ink: #22313b;
+    --muted: #5c6b76;
+    --hair: rgba(34, 49, 59, 0.2);
+    --ok: #1f8a4c;
+    --accent: #f07d2a;
+    --block: #161b1f;
+    --iso-top: #ffffff;
+    --iso-right: #f0f3f5;
+    --iso-left: #e3e9ed;
+    --iso-board: #fafbfc;
+    --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+    --gutter: 24px;
+    --edge: 32px;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        --paper: #0b0b0b;
+        --iso-top: #1c2226;
+        --iso-right: #13181b;
+        --iso-left: #0e1214;
+        --iso-board: #121619;
+        --ink: #f4f6f8;
+        --muted: #93a0aa;
+        --hair: rgba(244, 246, 248, 0.2);
+        --ok: #4cc38a;
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme='dark'] {
+    --paper: #0b0b0b;
+    --iso-top: #1c2226;
+    --iso-right: #13181b;
+    --iso-left: #0e1214;
+    --iso-board: #121619;
+    --ink: #f4f6f8;
+    --muted: #93a0aa;
+    --hair: rgba(244, 246, 248, 0.2);
+    --ok: #4cc38a;
+    color-scheme: dark;
+}
+
+/* A picture of the app exists in both themes: only one is shown */
+.only-dark {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .only-dark {
+        display: block;
+    }
+
+    :root:not([data-theme='light']) .only-light {
+        display: none;
+    }
+}
+
+:root[data-theme='dark'] .only-dark {
+    display: block;
+}
+
+:root[data-theme='dark'] .only-light {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'tnum';
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* The grid */
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--edge);
+}
+
+.grid,
+figure.wide {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gutter);
+}
+
+.c-margin { grid-column: 1 / span 3; }
+.c-body { grid-column: 4 / -1; }
+.c-left { grid-column: 4 / span 4; }
+.c-right { grid-column: 8 / -1; }
+.c-text { grid-column: 4 / span 5; }
+
+/* Masthead */
+.masthead {
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--ink);
+    font-size: 14px;
+}
+
+/* The logo is always one of its own files, never typed: colour on white,
+   negative on black, and not smaller than its 110 pixels */
+.brand {
+    grid-column: 1 / span 3;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 132px;
+    height: 38px;
+}
+
+.motto {
+    grid-column: 4 / span 4;
+    color: var(--muted);
+}
+
+.nav {
+    grid-column: 8 / -1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav a[aria-current='page'] {
+    font-weight: 700;
+}
+
+/* Light or dark: shown only when the script that makes it work has run */
+.theme-toggle {
+    display: none;
+    font: inherit;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.js .theme-toggle {
+    display: inline-block;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+}
+
+/* Buttons: a flat block with an arrow at the end */
+.button {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.button::after {
+    content: '\2192';
+    font-weight: 400;
+}
+
+.button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0b0b0b;
+}
+
+/* The second button of a pair: an outline */
+.button.quiet {
+    background: none;
+    border-color: var(--hair);
+    color: var(--ink);
+}
+
+.button.quiet:hover {
+    background: none;
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+.nav .button {
+    padding: 7px 10px;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Type */
+h1 {
+    font-size: clamp(2.1rem, 4.3vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+}
+
+/* The words that matter, under a stroke of the orange marker */
+h1 em {
+    font-style: normal;
+    padding: 0 0.14em;
+    margin: 0 -0.08em;
+    /* (the stroke is a little lower than the line, so it does not touch the one above) */
+    background: linear-gradient(to bottom, transparent 9%, var(--accent) 9%, var(--accent) 96%, transparent 96%);
+    color: #22313b;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+h2,
+.numeral {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.028em;
+}
+
+.numeral {
+    display: block;
+    color: var(--accent);
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.lead {
+    font-size: 1.15rem;
+    line-height: 1.42;
+    letter-spacing: -0.008em;
+}
+
+.statement {
+    grid-column: 4 / span 7;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 500;
+    line-height: 1.24;
+    letter-spacing: -0.022em;
+}
+
+.label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.c-margin .label {
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+.muted {
+    color: var(--muted);
+}
+
+p + p,
+p + ul {
+    margin-top: 0.85em;
+}
+
+code {
+    font-family: var(--mono);
+    font-size: 0.9em;
+}
+
+/* Hero: the words on the left, the drawing on the right */
+.hero {
+    padding-top: 56px;
+    row-gap: 40px;
+    align-items: center;
+}
+
+.hero-text {
+    grid-column: 1 / span 5;
+}
+
+.hero-text h1 {
+    margin-bottom: 22px;
+}
+
+.hero-text .lead {
+    max-width: 30em;
+    margin-bottom: 26px;
+}
+
+.hero-drawing {
+    grid-column: 6 / -1;
+}
+
+/* The three things it does, each with its drawing */
+.verb {
+    align-items: center;
+}
+
+.verb-text {
+    grid-column: 1 / span 5;
+}
+
+.verb-text h2,
+.verb-text .numeral {
+    font-size: 1.9rem;
+}
+
+.verb-text h2 {
+    margin-bottom: 16px;
+}
+
+.verb-drawing {
+    grid-column: 7 / -1;
+}
+
+/* The three of them at a glance, before each has its section */
+.index {
+    grid-column: 4 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: var(--gutter);
+    row-gap: 18px;
+    list-style: none;
+}
+
+.index a {
+    display: block;
+    height: 100%;
+    padding-top: 12px;
+    border-top: 1px solid var(--ink);
+    text-decoration: none;
+}
+
+.index a:hover {
+    color: inherit;
+    border-top-color: var(--accent);
+}
+
+.index .numeral {
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.index b {
+    display: block;
+    font-size: 1.15rem;
+    letter-spacing: -0.015em;
+}
+
+.index .what {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.strap {
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.strap.first {
+    margin: 0 0 14px;
+}
+
+/* Sections */
+.block {
+    margin-top: 80px;
+    padding-top: 18px;
+    border-top: 1px solid var(--ink);
+    row-gap: 28px;
+}
+
+.block.tight {
+    margin-top: 64px;
+}
+
+/* Figures */
+.shot {
+    display: block;
+    border: 1px solid var(--hair);
+}
+
+.shot img {
+    width: 100%;
+    height: auto;
+}
+
+a.shot:hover {
+    border-color: var(--accent);
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--muted);
+}
+
+figcaption b {
+    display: block;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+/* A figure as wide as the body, with its caption in the margin */
+figure.wide {
+    grid-column: 1 / -1;
+}
+
+figure.wide > .shot,
+figure.wide > .terminal {
+    grid-column: 4 / -1;
+    grid-row: 1;
+}
+
+figure.wide > figcaption {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    align-self: end;
+    margin-top: 0;
+    padding-top: 8px;
+    border-top: 1px solid var(--hair);
+}
+
+/* A list whose bullet is a pixel */
+.pixels {
+    list-style: none;
+    font-size: 15px;
+}
+
+.pixels li {
+    position: relative;
+    padding: 7px 0 7px 20px;
+    border-top: 1px solid var(--hair);
+}
+
+.pixels li:last-child {
+    border-bottom: 1px solid var(--hair);
+}
+
+.pixels li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.02em;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+}
+
+/* Terminal: dark in both themes, as in the app */
+.terminal {
+    background: var(--block);
+    border: 1px solid var(--hair);
+    color: #dde3e8;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.7;
+    padding: 18px 20px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-feature-settings: normal;
+}
+
+.terminal .prompt,
+.terminal .dim {
+    color: #808d97;
+}
+
+.terminal .cmd {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.terminal .good {
+    color: #63d391;
+}
+
+.terminal .bad {
+    color: #ff8370;
+}
+
+/* Two lists side by side: what it follows, what it does not */
+.ledger {
+    list-style: none;
+    font-size: 15px;
+}
+
+.ledger li {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    padding: 7px 0;
+    border-top: 1px solid var(--hair);
+}
+
+.ledger li:last-child {
+    border-bottom: 1px solid var(--hair);
+}
+
+.ledger .mark {
+    font-family: var(--mono);
+    color: var(--muted);
+}
+
+.ledger.yes .mark {
+    color: var(--accent);
+}
+
+.ledger-head {
+    padding-bottom: 10px;
+}
+
+/* Columns inside the body */
+.third {
+    padding-top: 12px;
+    border-top: 1px solid var(--hair);
+    font-size: 15px;
+}
+
+.third.t1 { grid-column: 4 / span 3; }
+.third.t2 { grid-column: 7 / span 3; }
+.third.t3 { grid-column: 10 / span 3; }
+.third.a { grid-column: 4 / span 4; }
+.third.b { grid-column: 8 / -1; }
+
+.third h3 {
+    margin-bottom: 6px;
+}
+
+.third .numeral {
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+}
+
+.third .label {
+    margin-bottom: 8px;
+    color: var(--muted);
+}
+
+/* A table of states (the why page) */
+.states {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.states th,
+.states td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 24px 12px 0;
+    border-top: 1px solid var(--hair);
+    font-weight: 400;
+}
+
+.states tr:last-child th,
+.states tr:last-child td {
+    border-bottom: 1px solid var(--hair);
+}
+
+.states th {
+    width: 14%;
+    font-weight: 700;
+}
+
+.states .state {
+    width: 26%;
+    white-space: nowrap;
+    color: var(--muted);
+}
+
+.states .state::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 9px;
+    background: var(--ok);
+}
+
+.states .state.todo::before {
+    background: none;
+    border: 1px solid var(--muted);
+}
+
+.states td:last-child {
+    padding-right: 0;
+}
+
+/* The drawing of the home page (made by tools/hero-drawing.py): thin lines,
+   three shades for the three faces of a box, orange for what moves */
+.iso {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.iso polygon,
+.iso polyline,
+.iso path,
+.iso rect,
+.iso line,
+.iso circle {
+    stroke: var(--ink);
+    stroke-width: 1.15;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.iso-top { fill: var(--iso-top); }
+.iso-top.end { fill: var(--accent); }
+.iso-left { fill: var(--iso-left); }
+.iso-right { fill: var(--iso-right); }
+.iso-board { fill: var(--iso-board); }
+
+.iso .iso-foot {
+    fill: none;
+    stroke: var(--muted);
+    stroke-width: 1;
+    stroke-dasharray: 4 4;
+}
+
+.iso .iso-dots circle {
+    fill: var(--muted);
+    stroke: none;
+    opacity: 0.5;
+}
+
+.iso .iso-cable {
+    fill: none;
+    stroke: var(--muted);
+}
+
+.iso .iso-way {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.6;
+    stroke-dasharray: 7 6;
+    animation: flow-way 1.3s linear infinite;
+}
+
+.iso .iso-way.stopped {
+    stroke-dasharray: 2 6;
+    animation: none;
+}
+
+.iso .iso-detail {
+    fill: none;
+    stroke-width: 0.9;
+    opacity: 0.5;
+}
+
+.iso .iso-port {
+    fill: var(--ink);
+    stroke: none;
+}
+
+.iso .iso-screen {
+    fill: var(--iso-top);
+    stroke-width: 0.9;
+}
+
+.iso-px .iso-top { fill: var(--accent); }
+.iso-px .iso-right { fill: #d96a1d; }
+.iso-px .iso-left { fill: #bf5a15; }
+
+.iso .iso-cross {
+    stroke-width: 1.8;
+    fill: none;
+}
+
+.iso .iso-mark,
+.iso .iso-leader {
+    fill: none;
+    stroke-width: 1;
+}
+
+.iso .iso-leader {
+    stroke-dasharray: 2 4;
+}
+
+.iso .iso-note {
+    fill: var(--paper);
+    stroke-width: 1;
+}
+
+.iso-note-text {
+    font-family: var(--mono);
+    font-size: 14.5px;
+    fill: var(--muted);
+}
+
+.iso-note-text.strong {
+    fill: var(--ink);
+    font-weight: 500;
+}
+
+/* The top of a device when a packet reaches it */
+.iso .iso-flash {
+    fill: #ffffff;
+    stroke: none;
+}
+
+/* A cable while it is being drawn: its dashes are measured on the drawing */
+.iso .drawn {
+    vector-effect: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+}
+
+/* What is sketched on the whiteboard of the «why» page: lines for the cables,
+   squares for the devices, a dot where the packet is */
+.iso .iso-sketch {
+    fill: none;
+    stroke-width: 1.1;
+}
+
+.iso .iso-sketch.box {
+    fill: var(--iso-right);
+}
+
+.iso .iso-sketch.box.end {
+    fill: var(--accent);
+}
+
+.iso .iso-dot {
+    fill: var(--accent);
+    stroke: var(--iso-top);
+    stroke-width: 2;
+}
+
+/* The small label of a cable */
+.iso .iso-tag {
+    fill: var(--paper);
+    stroke-width: 1;
+}
+
+.iso-tag-text {
+    font-family: var(--mono);
+    font-size: 12px;
+    fill: var(--ink);
+}
+
+/* The number of a hop, over its device; orange once the packet has been there */
+.iso .iso-stem {
+    stroke: var(--muted);
+    stroke-width: 1;
+    stroke-dasharray: 2 3;
+}
+
+.iso .iso-badge {
+    fill: var(--paper);
+    stroke-width: 1.15;
+}
+
+.iso .iso-badge.on {
+    fill: var(--accent);
+    stroke: var(--accent);
+}
+
+.iso-badge-text {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    fill: var(--ink);
+}
+
+.iso-badge-text.on {
+    fill: #22313b;
+}
+
+@keyframes flow-way {
+    to {
+        stroke-dashoffset: -13;
+    }
+}
+
+.aside {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* Closing and footer */
+.closing .statement {
+    font-weight: 600;
+}
+
+.closing .actions {
+    grid-column: 4 / -1;
+}
+
+footer {
+    margin-top: 96px;
+    padding: 18px 0 48px;
+    border-top: 1px solid var(--ink);
+    font-size: 13.5px;
+    row-gap: 24px;
+}
+
+footer .col {
+    grid-column: span 3;
+}
+
+footer .label {
+    margin-bottom: 6px;
+    color: var(--muted);
+}
+
+/* Medium widths: six columns, the margin moves above the body */
+@media (max-width: 1000px) {
+    .grid,
+    figure.wide {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .hero-text,
+    .hero-drawing,
+    .verb-text,
+    .verb-drawing,
+    .index,
+    .c-margin,
+    .c-body,
+    .c-text,
+    .statement,
+    figure.wide > .shot,
+    figure.wide > .terminal,
+    figure.wide > figcaption {
+        grid-column: 1 / -1;
+    }
+
+    .c-left,
+    .third.a {
+        grid-column: 1 / span 3;
+    }
+
+    .c-right,
+    .third.b {
+        grid-column: 4 / -1;
+    }
+
+    .third.t1 { grid-column: 1 / span 2; }
+    .third.t2 { grid-column: 3 / span 2; }
+    .third.t3 { grid-column: 5 / span 2; }
+
+    .brand { grid-column: 1 / span 2; }
+    .nav { grid-column: 3 / -1; }
+    .motto { display: none; }
+
+    .closing .actions { grid-column: 1 / -1; }
+
+    .c-margin {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+    }
+
+    .c-margin .label {
+        margin-bottom: 0;
+    }
+
+    figure.wide > figcaption {
+        grid-row: 2;
+        margin-top: 10px;
+        padding-top: 0;
+        border-top: 0;
+    }
+}
+
+/* Narrow screens: one column */
+@media (max-width: 640px) {
+    :root {
+        --edge: 20px;
+    }
+
+    .grid > *,
+    figure.wide > * {
+        grid-column: 1 / -1 !important;
+    }
+
+    .masthead {
+        grid-template-columns: 1fr auto;
+    }
+
+    .masthead > .brand {
+        grid-column: 1 !important;
+    }
+
+    .masthead > .nav {
+        grid-column: 2 !important;
+    }
+
+    .nav a:not(.button) {
+        display: none;
+    }
+
+    .index {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero {
+        padding-top: 36px;
+        row-gap: 26px;
+    }
+
+    .block {
+        margin-top: 56px;
+        row-gap: 20px;
+    }
+
+    .block.tight {
+        margin-top: 48px;
+    }
+
+    .terminal {
+        font-size: 11.5px;
+        padding: 14px;
+    }
+
+    .states,
+    .states tbody,
+    .states tr,
+    .states th,
+    .states td {
+        display: block;
+        width: auto;
+    }
+
+    .states th {
+        padding-bottom: 0;
+    }
+
+    .states td {
+        border-top: 0;
+        padding-top: 4px;
+        padding-right: 0;
+        white-space: normal;
+    }
+
+    .states tr:last-child th {
+        border-bottom: 0;
+    }
+
+    footer {
+        margin-top: 64px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .iso .iso-way {
+        animation: none;
+    }
+}
