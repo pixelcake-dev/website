@@ -8,7 +8,8 @@ in a loop, with the animation elements of SVG; assets/site.js starts a story
 when its drawing comes into view and stills it for who asked for less motion.
 
 Colours come from the style sheet (assets/site.css), so one drawing serves
-the light and the dark theme.
+the light and the dark theme. The words written in a drawing, and what a
+screen reader says of it, are in the language of its page (WORDS, below).
 
     python tools/drawings.py
 
@@ -17,6 +18,7 @@ writes every drawing into the pages, between the comments that name it:
     <!-- drawing:hero --> ... <!-- /drawing:hero -->
 """
 
+import html
 import math
 import os
 import re
@@ -28,7 +30,80 @@ SHADOW = 1.0  # how far under the board its dashed shadow lies
 BOARD_H = 0.3
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAGES = ("index.html", "why.html")
+# Each page, and the language its drawings speak
+PAGES = {"index.html": "en", "why.html": "en", "it/index.html": "it", "it/why.html": "it"}
+
+# What the drawings write, and what they are for a screen reader, in each language.
+# The words of the app: «canvas» is the board, a hop is «salto», another path «un'altra strada».
+WORDS = {
+    "en": {
+        "hero": {
+            "asked": ("ping &#8594; reply", "there and back, hop by hop"),
+            "stopped": ("ping &#8594; stopped here", "the answer says why"),
+            "label": "A small network drawn in perspective: a server, a router, a firewall and the Internet in a row, "
+            "a switch and three PCs in front. A packet goes from a PC to the server and back along a line marked "
+            "in orange; a second packet, from the Internet, is stopped at the firewall.",
+        },
+        "design": {
+            "card": ("PC-2", "ip       192.168.10.12", "gateway  192.168.10.1", "vlan     10"),
+            "label": "A network being drawn: a router, a server, a switch and a PC are on the board. "
+            "A second PC is put down, its cable to the switch is drawn, and its address, gateway and VLAN are written next to it.",
+        },
+        "ask": {
+            "title": "trace Server from PC",
+            "hops": ("1  PC", "2  Switch", "3  Router    routed, port 2", "4  Firewall  allowed, rule 1", "5  Server    reached"),
+            "label": "A packet goes from a PC to a server through a switch, a router and a firewall. "
+            "Each device it passes gets its number, and a note lists the five hops with what each device did.",
+        },
+        "present": {
+            "cut": ("main line cut", "still arrives, by the backup"),
+            "label": "Two sites joined by a main line, with a third router as a backup. A packet goes along the main line; "
+            "the line is cut, and the next packet goes round through the backup router and still arrives.",
+        },
+        "why": {
+            "whiteboard": ("on the whiteboard", "where a network starts"),
+            "board": ("on the board", "the same network, answering"),
+            "label": "A whiteboard stands behind a small network, and the same network is sketched on it as squares and lines. "
+            "A line is drawn on the whiteboard, the matching cable appears between the router and the server, "
+            "and a packet goes from a PC to the server while a dot follows the same way on the sketch.",
+        },
+    },
+    "it": {
+        "hero": {
+            "asked": ("ping &#8594; risposta", "andata e ritorno, salto per salto"),
+            "stopped": ("ping &#8594; fermato qui", "la risposta dice perché"),
+            "label": "Una piccola rete disegnata in prospettiva: un server, un router, un firewall e Internet in fila, "
+            "uno switch e tre PC davanti. Un pacchetto va da un PC al server e torna indietro lungo una linea "
+            "segnata in arancione; un secondo pacchetto, da Internet, si ferma al firewall.",
+        },
+        "design": {
+            "card": ("PC-2", "indirizzo 192.168.10.12", "gateway   192.168.10.1", "VLAN      10"),
+            "label": "Una rete mentre viene disegnata: sul canvas ci sono un router, un server, uno switch e un PC. "
+            "Arriva un secondo PC, si disegna il suo cavo verso lo switch, e accanto compaiono il suo indirizzo, "
+            "il gateway e la VLAN.",
+        },
+        "ask": {
+            "title": "percorso da PC a Server",
+            "hops": ("1  PC", "2  Switch", "3  Router    instrada, porta 2", "4  Firewall  permette, regola 1", "5  Server    raggiunto"),
+            "label": "Un pacchetto va da un PC a un server passando da uno switch, un router e un firewall. "
+            "Ogni dispositivo che attraversa prende il suo numero, e una nota elenca i cinque salti con quello che "
+            "ha fatto ciascun dispositivo.",
+        },
+        "present": {
+            "cut": ("linea principale tagliata", "arriva lo stesso, dalla riserva"),
+            "label": "Due sedi unite da una linea principale, con un terzo router di riserva. Un pacchetto passa dalla "
+            "linea principale; la linea viene tagliata, e il pacchetto successivo fa il giro dal router di riserva "
+            "e arriva lo stesso.",
+        },
+        "why": {
+            "whiteboard": ("sulla lavagna", "dove nasce una rete"),
+            "board": ("sul canvas", "la stessa rete, che risponde"),
+            "label": "Dietro una piccola rete c'è una lavagna, e sulla lavagna la stessa rete è abbozzata con quadrati "
+            "e linee. Sulla lavagna si traccia una linea, tra il router e il server compare il cavo corrispondente, "
+            "e un pacchetto va da un PC al server mentre un punto segue la stessa strada sullo schizzo.",
+        },
+    },
+}
 
 
 # --- geometry ----------------------------------------------------------------
@@ -345,10 +420,17 @@ def cross(px, py, arm=5, inner=""):
 
 
 LINE, PAD = 21, 13
+CHAR = 8.7  # the width of a character of the notes (JetBrains Mono at 14.5 pixels)
 
 
 def note_height(count):
     return PAD * 2 + LINE * count - 7
+
+
+def fit(width, texts):
+    """A note as wide as `width`, or wider when a line of it asks for more (a longer language)."""
+    longest = max(len(html.unescape(text)) for text in texts)
+    return max(width, math.ceil(PAD * 2 + CHAR * longest))
 
 
 def note(lines, px, py, width, leader=None, inner="", dur=0):
@@ -417,7 +499,7 @@ def corners(width, depth, top=70, bottom=82, side=26):
 # --- the hero: a question that gets its answer, and one that is stopped ------
 
 
-def hero():
+def hero(words):
     width, depth, dur = 8.4, 6.6, 10
     srv, rtr, wall = server(0.6, 0.6), router(3.6, 0.5), firewall(5.5, 0.25)
     net = (7.0, 0.55, 1.2, 1.1, 0.24)
@@ -474,10 +556,11 @@ def hero():
 
     left, top, right, bottom = corners(width, depth, top=104, bottom=30)
     sx, sy = top_of(srv)
-    nx, ny, nw = left + 14, top + 14, 258
+    asked, stopped_here = words["asked"], words["stopped"]
+    nx, ny, nw = left + 14, top + 14, fit(258, asked)
     out.append(
         note(
-            [("ping &#8594; reply", "iso-note-text strong"), ("there and back, hop by hop", "iso-note-text")],
+            [(asked[0], "iso-note-text strong"), (asked[1], "iso-note-text")],
             nx,
             ny,
             nw,
@@ -485,11 +568,11 @@ def hero():
         )
     )
     hx, hy = iso(halt[0], halt[1], 0.4)
-    nw = 232
+    nw = fit(232, stopped_here)
     nx, ny = right - nw - 26, bottom - note_height(2) - 26
     out.append(
         note(
-            [("ping &#8594; stopped here", "iso-note-text strong"), ("the answer says why", "iso-note-text")],
+            [(stopped_here[0], "iso-note-text strong"), (stopped_here[1], "iso-note-text")],
             nx,
             ny,
             nw,
@@ -500,9 +583,7 @@ def hero():
         out,
         width,
         depth,
-        "A small network drawn in perspective: a server, a router, a firewall and the Internet in a row, "
-        "a switch and three PCs in front. A packet goes from a PC to the server and back along a line marked "
-        "in orange; a second packet, from the Internet, is stopped at the firewall.",
+        words["label"],
         still=4.2,
         top=104,
         bottom=30,
@@ -512,7 +593,7 @@ def hero():
 # --- design: a device is put down, its cable is drawn, its numbers written ----
 
 
-def design():
+def design(words):
     width, depth, dur = 7.0, 6.4, 9
     rtr, srv, sw = router(3.0, 0.7), server(5.3, 0.8), switch_x(2.6, 2.9)
     old, new = pc(1.85, 5.2), pc(4.45, 5.2)
@@ -565,9 +646,10 @@ def design():
 
     left, top, right, bottom = corners(width, depth)
     px, py = top_of(new)
-    nx, ny, nw = left + 22, top + 18, 232
-    lines = [("PC-2", "iso-note-text strong")]
-    for i, text in enumerate(["ip       192.168.10.12", "gateway  192.168.10.1", "vlan     10"]):
+    card = words["card"]
+    nx, ny, nw = left + 22, top + 18, fit(232, card)
+    lines = [(card[0], "iso-note-text strong")]
+    for i, text in enumerate(card[1:]):
         at = 0.48 + 0.08 * i
         lines.append((text, "iso-note-text", [(0, 0), (at, 0), (at + 0.02, 1), (0.94, 1), (0.98, 0), (1, 0)]))
     out.append(
@@ -576,20 +658,13 @@ def design():
         + note(lines, nx, ny, nw, leader=((nx + nw * 0.5, ny + note_height(4)), (px - 6, py + 4)), dur=dur)
         + "</g>"
     )
-    return sheet(
-        out,
-        width,
-        depth,
-        "A network being drawn: a router, a server, a switch and a PC are on the board. "
-        "A second PC is put down, its cable to the switch is drawn, and its address, gateway and VLAN are written next to it.",
-        still=7.4,
-    )
+    return sheet(out, width, depth, words["label"], still=7.4)
 
 
 # --- ask: the packet goes hop by hop, and each hop is written down -----------
 
 
-def ask():
+def ask(words):
     width, depth, dur = 4.8, 8.6, 10
     col = 2.4
     start, sw, rtr = pc(col - 0.45, 7.1), switch_x(col - 1.0, 5.47), router(col - 0.6, 3.8)
@@ -634,25 +709,18 @@ def ask():
         out.append(flash(item, [when[i]] if when[i] > 0.02 else [], dur))
 
     left, top, right, bottom = corners(width, depth)
-    words = ["1  PC", "2  Switch", "3  Router    routed, port 2", "4  Firewall  allowed, rule 1", "5  Server    reached"]
-    lines = [("trace Server from PC", "iso-note-text strong")]
-    lines += [(text, "iso-note-text", appears(when[i])) for i, text in enumerate(words)]
-    nw = 282
+    hops = words["hops"]
+    lines = [(words["title"], "iso-note-text strong")]
+    lines += [(text, "iso-note-text", appears(when[i])) for i, text in enumerate(hops)]
+    nw = fit(282, (words["title"],) + hops)
     out.append(note(lines, right - nw - 22, bottom - note_height(6) - 22, nw, dur=dur))
-    return sheet(
-        out,
-        width,
-        depth,
-        "A packet goes from a PC to a server through a switch, a router and a firewall. "
-        "Each device it passes gets its number, and a note lists the five hops with what each device did.",
-        still=8.6,
-    )
+    return sheet(out, width, depth, words["label"], still=8.6)
 
 
 # --- present: the line is cut, and the packet goes the other way -------------
 
 
-def present():
+def present(words):
     width, depth, dur = 8.6, 4.8, 12
     row, back = 3.3, 1.1
     srv, b, a = server(0.5, row - 0.5), router(2.4, row - 0.6), router(5.6, row - 0.6)
@@ -721,11 +789,12 @@ def present():
     )
 
     left, top, right, bottom = corners(width, depth)
-    nw = 282
+    cut = words["cut"]
+    nw = fit(282, cut)
     nx, ny = left + 22, bottom - note_height(2) - 22
     lines = [
-        ("main line cut", "iso-note-text strong"),
-        ("still arrives, by the backup", "iso-note-text", [(0, 0), (0.86, 0), (0.88, 1), (0.94, 1), (0.98, 0), (1, 0)]),
+        (cut[0], "iso-note-text strong"),
+        (cut[1], "iso-note-text", [(0, 0), (0.86, 0), (0.88, 1), (0.94, 1), (0.98, 0), (1, 0)]),
     ]
     out.append(
         '<g opacity="0">'
@@ -733,20 +802,13 @@ def present():
         + note(lines, nx, ny, nw, leader=((nx + nw * 0.72, ny), (kx - 2, ky + 14)), dur=dur)
         + "</g>"
     )
-    return sheet(
-        out,
-        width,
-        depth,
-        "Two sites joined by a main line, with a third router as a backup. A packet goes along the main line; "
-        "the line is cut, and the next packet goes round through the backup router and still arrives.",
-        still=10.6,
-    )
+    return sheet(out, width, depth, words["label"], still=10.6)
 
 
 # --- why: the network is on a whiteboard first, and the board keeps it alive --
 
 
-def why():
+def why(words):
     width, depth, dur = 7.4, 6.6, 11
     srv, rtr, sw = server(0.8, 2.3), router(3.3, 2.2), switch_x(2.9, 4.0)
     pcs = [pc(2.6, 5.5), pc(4.7, 5.5)]
@@ -845,10 +907,11 @@ def why():
 
     left, top, right, bottom = corners(width, depth, top=176, bottom=30)
     bx, by = wall(wx + 0.2, (low + high) / 2)
-    nx, ny, nw = left + 14, top + 22, 250
+    on_whiteboard, on_board_ = words["whiteboard"], words["board"]
+    nx, ny, nw = left + 14, top + 22, fit(250, on_whiteboard)
     out.append(
         note(
-            [("on the whiteboard", "iso-note-text strong"), ("where a network starts", "iso-note-text")],
+            [(on_whiteboard[0], "iso-note-text strong"), (on_whiteboard[1], "iso-note-text")],
             nx,
             ny,
             nw,
@@ -856,11 +919,11 @@ def why():
         )
     )
     fx, fy = iso(centre(pcs[1])[0] + 0.75, centre(pcs[1])[1] + 0.2, 0.3)
-    nw = 268
+    nw = fit(268, on_board_)
     nx, ny = right - nw - 20, bottom - note_height(2) - 22
     out.append(
         note(
-            [("on the board", "iso-note-text strong"), ("the same network, answering", "iso-note-text")],
+            [(on_board_[0], "iso-note-text strong"), (on_board_[1], "iso-note-text")],
             nx,
             ny,
             nw,
@@ -871,9 +934,7 @@ def why():
         out,
         width,
         depth,
-        "A whiteboard stands behind a small network, and the same network is sketched on it as squares and lines. "
-        "A line is drawn on the whiteboard, the matching cable appears between the router and the server, "
-        "and a packet goes from a PC to the server while a dot follows the same way on the sketch.",
+        words["label"],
         still=8,
         top=176,
         bottom=30,
@@ -884,8 +945,12 @@ DRAWINGS = {"hero": hero, "design": design, "ask": ask, "present": present, "why
 
 
 def main():
-    made = {name: draw() for name, draw in DRAWINGS.items()}
-    for page in PAGES:
+    drawn = {
+        language: {name: draw(WORDS[language][name]) for name, draw in DRAWINGS.items()}
+        for language in sorted(set(PAGES.values()))
+    }
+    for page, language in PAGES.items():
+        made = drawn[language]
         path = os.path.join(ROOT, page)
         text = open(path, encoding="utf-8", newline="").read()
         newline = "\r\n" if "\r\n" in text else "\n"

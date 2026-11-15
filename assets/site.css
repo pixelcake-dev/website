@@ -236,6 +236,44 @@ figure.wide {
     color: var(--accent);
 }
 
+/* The two languages, as in the app: two letters side by side, the one of the
+   page marked. Each leads to the same page in the other language. */
+.lang {
+    display: inline-flex;
+    flex-shrink: 0;
+    border: 1px solid var(--hair);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    line-height: 1;
+}
+
+.lang a,
+.lang span {
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+.lang > * + * {
+    border-left: 1px solid var(--hair);
+}
+
+.lang [aria-current] {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.lang a:hover {
+    color: var(--accent);
+}
+
+/* (in the footer, on a line of its own under the words) */
+footer .lang {
+    display: flex;
+    width: fit-content;
+    margin-top: 10px;
+}
+
 /* Buttons: a flat block with an arrow at the end */
 .button {
     display: inline-flex;
@@ -309,6 +347,15 @@ h1 {
     font-weight: 500;
     line-height: 1.12;
     letter-spacing: -0.035em;
+}
+
+/* A title shares its words evenly between its lines, so that none ends on a
+   word alone, in either language (where the browser knows how) */
+h1,
+h2,
+h3,
+.statement {
+    text-wrap: balance;
 }
 
 /* The words that matter, under a stroke of the orange marker */
@@ -1011,8 +1058,15 @@ footer .label {
         grid-column: 2 !important;
     }
 
-    .nav a:not(.button) {
+    /* (the links give way, the theme and the language stay; the app has its
+       button further down) */
+    .nav > a:not(.button),
+    .nav > .button.soon {
         display: none;
+    }
+
+    .nav {
+        gap: 14px;
     }
 
     .index {

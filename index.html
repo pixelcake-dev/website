@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-italian-home="it/">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,12 @@
     <meta name="description"
         content="A visual network designer that runs in your browser. Draw a network, configure it, then ask it: does this PC reach that server? Free and open source.">
 
+    <!-- The same page in the other language -->
+    <link rel="canonical" href="https://pixelcake.dev/">
+    <link rel="alternate" hreflang="en" href="https://pixelcake.dev/">
+    <link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/">
+    <link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/">
+
     <!-- Favicon -->
     <link rel="icon" href="./assets/favicon.ico" sizes="48x48">
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
@@ -15,6 +21,8 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:locale:alternate" content="it_IT">
     <meta property="og:url" content="https://pixelcake.dev/">
     <meta property="og:title" content="PixelCake - The network drawing that answers back.">
     <meta property="og:description"
@@ -47,6 +55,10 @@
                 <a href="./why.html">Why</a>
                 <a href="https://github.com/pixelcake-dev" target="_blank" rel="noopener">GitHub</a>
                 <button class="theme-toggle" type="button">Dark</button>
+                <div class="lang" role="group" aria-label="Language">
+                    <span lang="en" title="English" aria-current="true">EN</span>
+                    <a href="./it/index.html" hreflang="it" lang="it" title="Italiano" aria-label="Italiano">IT</a>
+                </div>
                 <span class="button soon" aria-disabled="true">App coming soon</span>
             </nav>
         </header>
@@ -456,7 +468,12 @@ Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
             </div>
             <div class="col">
                 <span class="label">Language</span>
-                The interface is in English and in Italian, one click apart. The terminal speaks English.
+                The site is in English and in Italian, and so is the app, one click apart.
+                The terminal of the app speaks English.
+                <div class="lang" role="group" aria-label="Language">
+                    <span lang="en" title="English" aria-current="true">EN</span>
+                    <a href="./it/index.html" hreflang="it" lang="it" title="Italiano" aria-label="Italiano">IT</a>
+                </div>
             </div>
         </footer>
     </div>

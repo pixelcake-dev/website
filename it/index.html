@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelCake - Una rete, un pezzo alla volta.</title>
+    <meta name="description"
+        content="Un ambiente visuale per progettare reti, nel browser. Disegni una rete, la configuri, poi le chiedi: questo PC raggiunge quel server? Gratuito e open source.">
+
+    <!-- The same page in the other language -->
+    <link rel="canonical" href="https://pixelcake.dev/it/">
+    <link rel="alternate" hreflang="en" href="https://pixelcake.dev/">
+    <link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/">
+    <link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/favicon.ico" sizes="48x48">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/pixelcake-256.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:url" content="https://pixelcake.dev/it/">
+    <meta property="og:title" content="PixelCake - Il disegno di rete che ti risponde.">
+    <meta property="og:description"
+        content="Disegni una rete, la configuri, poi le chiedi: questo PC raggiunge quel server? Funziona nel browser. Gratuito e open source.">
+    <meta property="og:image" content="https://pixelcake.dev/assets/screenshot-it.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pixelcake.dev/it/">
+    <meta property="twitter:title" content="PixelCake - Il disegno di rete che ti risponde.">
+    <meta property="twitter:description"
+        content="Disegni una rete, la configuri, poi le chiedi: questo PC raggiunge quel server? Funziona nel browser. Gratuito e open source.">
+    <meta property="twitter:image" content="https://pixelcake.dev/assets/screenshot-it.png">
+
+    <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js"></script>
+</head>
+
+<body>
+    <div class="page">
+
+        <header class="masthead grid">
+            <a class="brand" href="./index.html" aria-label="PixelCake, pagina iniziale">
+                <img class="only-light" src="../assets/pixelcake-orizzontale-colore.svg" alt="PixelCake" width="132" height="38">
+                <img class="only-dark" src="../assets/pixelcake-orizzontale-negativo.svg" alt="PixelCake" width="132" height="38">
+            </a>
+            <span class="motto">Una rete, un pezzo alla volta.</span>
+            <nav class="nav" aria-label="Principale">
+                <a href="./why.html">Perché</a>
+                <a href="https://github.com/pixelcake-dev" target="_blank" rel="noopener">GitHub</a>
+                <button class="theme-toggle" type="button">Scuro</button>
+                <div class="lang" role="group" aria-label="Lingua">
+                    <a href="../index.html" hreflang="en" lang="en" title="English" aria-label="English">EN</a>
+                    <span lang="it" title="Italiano" aria-current="true">IT</span>
+                </div>
+                <span class="button soon" aria-disabled="true">App in arrivo</span>
+            </nav>
+        </header>
+
+        <main>
+            <div class="hero grid">
+                <div class="hero-text">
+                    <h1>Il disegno di rete che <em>ti risponde.</em></h1>
+                    <p class="lead">
+                        PixelCake è un ambiente visuale per progettare piccole reti. Disegni la rete,
+                        la configuri davvero, poi le chiedi: questo PC raggiunge quel server?
+                        Se non lo raggiunge, vedi dove si ferma il pacchetto, e perché.
+                    </p>
+                    <div class="actions">
+                        <span class="button soon" aria-disabled="true">App in arrivo</span>
+                        <a class="button quiet" href="./why.html">Perché lo sto sviluppando</a>
+                    </div>
+                    <p class="strap">nel browser &middot; senza account &middot; open source</p>
+                </div>
+                <div class="hero-drawing">
+                    <!-- drawing:hero -->
+                    <svg class="iso" viewBox="-323 -104 727 576" data-still="4.2" role="img" aria-label="Una piccola rete disegnata in prospettiva: un server, un router, un firewall e Internet in fila, uno switch e tre PC davanti. Un pacchetto va da un PC al server e torna indietro lungo una linea segnata in arancione; un secondo pacchetto, da Internet, si ferma al firewall.">
+                    <polygon class="iso-foot" points="0.0,52.0 378.3,270.4 81.1,442.0 -297.2,223.6"/>
+                    <polygon class="iso-left" points="-297.2,187.2 81.1,405.6 81.1,390.0 -297.2,171.6"/>
+                    <polygon class="iso-right" points="378.3,234.0 81.1,405.6 81.1,390.0 378.3,218.4"/>
+                    <polygon class="iso-board" points="0.0,0.0 378.3,218.4 81.1,390.0 -297.2,171.6"/>
+                    <g class="iso-dots"><circle cx="0.0" cy="31.2" r="1"/><circle cx="-27.0" cy="46.8" r="1"/><circle cx="-54.0" cy="62.4" r="1"/><circle cx="-81.1" cy="78.0" r="1"/><circle cx="-108.1" cy="93.6" r="1"/><circle cx="-135.1" cy="109.2" r="1"/><circle cx="-162.1" cy="124.8" r="1"/><circle cx="-189.1" cy="140.4" r="1"/><circle cx="-216.2" cy="156.0" r="1"/><circle cx="-243.2" cy="171.6" r="1"/><circle cx="27.0" cy="46.8" r="1"/><circle cx="0.0" cy="62.4" r="1"/><circle cx="-27.0" cy="78.0" r="1"/><circle cx="-54.0" cy="93.6" r="1"/><circle cx="-81.1" cy="109.2" r="1"/><circle cx="-108.1" cy="124.8" r="1"/><circle cx="-135.1" cy="140.4" r="1"/><circle cx="-162.1" cy="156.0" r="1"/><circle cx="-189.1" cy="171.6" r="1"/><circle cx="-216.2" cy="187.2" r="1"/><circle cx="54.0" cy="62.4" r="1"/><circle cx="27.0" cy="78.0" r="1"/><circle cx="0.0" cy="93.6" r="1"/><circle cx="-27.0" cy="109.2" r="1"/><circle cx="-54.0" cy="124.8" r="1"/><circle cx="-81.1" cy="140.4" r="1"/><circle cx="-108.1" cy="156.0" r="1"/><circle cx="-135.1" cy="171.6" r="1"/><circle cx="-162.1" cy="187.2" r="1"/><circle cx="-189.1" cy="202.8" r="1"/><circle cx="81.1" cy="78.0" r="1"/><circle cx="54.0" cy="93.6" r="1"/><circle cx="27.0" cy="109.2" r="1"/><circle cx="0.0" cy="124.8" r="1"/><circle cx="-27.0" cy="140.4" r="1"/><circle cx="-54.0" cy="156.0" r="1"/><circle cx="-81.1" cy="171.6" r="1"/><circle cx="-108.1" cy="187.2" r="1"/><circle cx="-135.1" cy="202.8" r="1"/><circle cx="-162.1" cy="218.4" r="1"/><circle cx="108.1" cy="93.6" r="1"/><circle cx="81.1" cy="109.2" r="1"/><circle cx="54.0" cy="124.8" r="1"/><circle cx="27.0" cy="140.4" r="1"/><circle cx="0.0" cy="156.0" r="1"/><circle cx="-27.0" cy="171.6" r="1"/><circle cx="-54.0" cy="187.2" r="1"/><circle cx="-81.1" cy="202.8" r="1"/><circle cx="-108.1" cy="218.4" r="1"/><circle cx="-135.1" cy="234.0" r="1"/><circle cx="135.1" cy="109.2" r="1"/><circle cx="108.1" cy="124.8" r="1"/><circle cx="81.1" cy="140.4" r="1"/><circle cx="54.0" cy="156.0" r="1"/><circle cx="27.0" cy="171.6" r="1"/><circle cx="0.0" cy="187.2" r="1"/><circle cx="-27.0" cy="202.8" r="1"/><circle cx="-54.0" cy="218.4" r="1"/><circle cx="-81.1" cy="234.0" r="1"/><circle cx="-108.1" cy="249.6" r="1"/><circle cx="162.1" cy="124.8" r="1"/><circle cx="135.1" cy="140.4" r="1"/><circle cx="108.1" cy="156.0" r="1"/><circle cx="81.1" cy="171.6" r="1"/><circle cx="54.0" cy="187.2" r="1"/><circle cx="27.0" cy="202.8" r="1"/><circle cx="0.0" cy="218.4" r="1"/><circle cx="-27.0" cy="234.0" r="1"/><circle cx="-54.0" cy="249.6" r="1"/><circle cx="-81.1" cy="265.2" r="1"/><circle cx="189.1" cy="140.4" r="1"/><circle cx="162.1" cy="156.0" r="1"/><circle cx="135.1" cy="171.6" r="1"/><circle cx="108.1" cy="187.2" r="1"/><circle cx="81.1" cy="202.8" r="1"/><circle cx="54.0" cy="218.4" r="1"/><circle cx="27.0" cy="234.0" r="1"/><circle cx="0.0" cy="249.6" r="1"/><circle cx="-27.0" cy="265.2" r="1"/><circle cx="-54.0" cy="280.8" r="1"/><circle cx="216.2" cy="156.0" r="1"/><circle cx="189.1" cy="171.6" r="1"/><circle cx="162.1" cy="187.2" r="1"/><circle cx="135.1" cy="202.8" r="1"/><circle cx="108.1" cy="218.4" r="1"/><circle cx="81.1" cy="234.0" r="1"/><circle cx="54.0" cy="249.6" r="1"/><circle cx="27.0" cy="265.2" r="1"/><circle cx="0.0" cy="280.8" r="1"/><circle cx="-27.0" cy="296.4" r="1"/><circle cx="243.2" cy="171.6" r="1"/><circle cx="216.2" cy="187.2" r="1"/><circle cx="189.1" cy="202.8" r="1"/><circle cx="162.1" cy="218.4" r="1"/><circle cx="135.1" cy="234.0" r="1"/><circle cx="108.1" cy="249.6" r="1"/><circle cx="81.1" cy="265.2" r="1"/><circle cx="54.0" cy="280.8" r="1"/><circle cx="27.0" cy="296.4" r="1"/><circle cx="0.0" cy="312.0" r="1"/><circle cx="270.2" cy="187.2" r="1"/><circle cx="243.2" cy="202.8" r="1"/><circle cx="216.2" cy="218.4" r="1"/><circle cx="189.1" cy="234.0" r="1"/><circle cx="162.1" cy="249.6" r="1"/><circle cx="135.1" cy="265.2" r="1"/><circle cx="108.1" cy="280.8" r="1"/><circle cx="81.1" cy="296.4" r="1"/><circle cx="54.0" cy="312.0" r="1"/><circle cx="27.0" cy="327.6" r="1"/><circle cx="297.2" cy="202.8" r="1"/><circle cx="270.2" cy="218.4" r="1"/><circle cx="243.2" cy="234.0" r="1"/><circle cx="216.2" cy="249.6" r="1"/><circle cx="189.1" cy="265.2" r="1"/><circle cx="162.1" cy="280.8" r="1"/><circle cx="135.1" cy="296.4" r="1"/><circle cx="108.1" cy="312.0" r="1"/><circle cx="81.1" cy="327.6" r="1"/><circle cx="54.0" cy="343.2" r="1"/><circle cx="324.2" cy="218.4" r="1"/><circle cx="297.2" cy="234.0" r="1"/><circle cx="270.2" cy="249.6" r="1"/><circle cx="243.2" cy="265.2" r="1"/><circle cx="216.2" cy="280.8" r="1"/><circle cx="189.1" cy="296.4" r="1"/><circle cx="162.1" cy="312.0" r="1"/><circle cx="135.1" cy="327.6" r="1"/><circle cx="108.1" cy="343.2" r="1"/><circle cx="81.1" cy="358.8" r="1"/></g>
+                    <polyline class="iso-cable" points="292.7,225.7 205.8,175.5 139.6,137.3"/>
+                    <polyline class="iso-cable" points="139.6,137.3 43.9,192.5"/>
+                    <polyline class="iso-cable" points="139.6,137.3 0.0,56.7"/>
+                    <polyline class="iso-cable" points="-36.0,194.5 117.1,282.9"/>
+                    <polyline class="iso-cable" points="43.9,192.5 2.3,216.6"/>
+                    <polyline class="iso-cable" points="-36.0,194.5 -105.8,234.8"/>
+                    <polyline class="iso-cable" points="40.5,238.7 -29.3,279.0"/>
+                    <polyline class="iso-cable" points="117.1,282.9 47.3,323.2"/>
+                    <polygon class="iso-foot" points="290.5,189.0 357.1,227.5 295.0,263.4 228.3,224.9"/>
+                    <polygon class="iso-foot" points="236.4,142.2 264.3,158.3 175.2,209.8 147.3,193.7"/>
+                    <polygon class="iso-foot" points="139.6,99.3 206.3,137.8 139.6,176.3 73.0,137.8"/>
+                    <polygon class="iso-foot" points="18.0,148.7 120.7,208.0 69.8,237.4 -32.9,178.1"/>
+                    <polygon class="iso-foot" points="0.0,23.9 57.6,57.2 0.0,90.5 -57.6,57.2"/>
+                    <polygon class="iso-foot" points="-108.1,205.9 -54.9,236.6 -103.6,264.7 -156.7,234.0"/>
+                    <polygon class="iso-foot" points="-31.5,250.1 21.6,280.8 -27.0,308.9 -80.2,278.2"/>
+                    <polygon class="iso-foot" points="45.0,294.3 98.2,325.0 49.5,353.1 -3.6,322.4"/>
+                    <polyline class="iso-way stopped" points="292.7,225.2 227.0,187.2"/>
+                    <polyline class="iso-way" points="-105.8,234.3 -36.0,194.0 2.3,216.1 43.9,192.0 139.6,136.8 0.0,56.2"/>
+                    <g class="iso-px"><animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.36;0.48;0.84;1" keyPoints="0;1;1;0;0" path="M-105.8 234.3 L-36.0 194.0 L2.3 216.1 L43.9 192.0 L139.6 136.8 L0.0 56.2"/><polygon class="iso-left" points="-11.7,-1.0 0.0,5.7 0.0,-7.8 -11.7,-14.6"/><polygon class="iso-right" points="11.7,-1.0 0.0,5.7 0.0,-7.8 11.7,-14.6"/><polygon class="iso-top" points="0.0,-21.3 11.7,-14.6 0.0,-7.8 -11.7,-14.6"/></g>
+                    <g class="iso-px"><animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.14;1" keyPoints="0;1;1" path="M292.7 225.2 L227.0 187.2"/><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.66;0.72;1" values="1;1;0;0"/><polygon class="iso-left" points="-11.7,-1.0 0.0,5.7 0.0,-7.8 -11.7,-14.6"/><polygon class="iso-right" points="11.7,-1.0 0.0,5.7 0.0,-7.8 11.7,-14.6"/><polygon class="iso-top" points="0.0,-21.3 11.7,-14.6 0.0,-7.8 -11.7,-14.6"/></g>
+                    <polygon class="iso-left" points="-45.0,57.2 0.0,83.2 0.0,-0.0 -45.0,-26.0"/><polygon class="iso-right" points="45.0,57.2 0.0,83.2 0.0,-0.0 45.0,-26.0"/><polygon class="iso-top end" points="0.0,-52.0 45.0,-26.0 0.0,-0.0 -45.0,-26.0"/><polyline class="iso-detail" points="38.7,47.0 6.3,65.7"/><polyline class="iso-detail" points="38.7,33.1 6.3,51.8"/><polyline class="iso-detail" points="38.7,19.2 6.3,38.0"/><polyline class="iso-detail" points="38.7,5.4 6.3,24.1"/><polyline class="iso-detail" points="38.7,-8.5 6.3,10.2"/>
+                    <polygon class="iso-left" points="85.6,137.8 139.6,169.0 139.6,143.0 85.6,111.8"/><polygon class="iso-right" points="193.6,137.8 139.6,169.0 139.6,143.0 193.6,111.8"/><polygon class="iso-top" points="139.6,80.6 193.6,111.8 139.6,143.0 85.6,111.8"/><polygon class="iso-port" points="95.5,134.2 100.9,137.3 100.9,130.0 95.5,126.9"/><polygon class="iso-port" points="105.4,139.9 110.8,143.0 110.8,135.7 105.4,132.6"/><polygon class="iso-port" points="115.3,145.6 120.7,148.7 120.7,141.4 115.3,138.3"/>
+                    <polygon class="iso-left" points="159.9,193.7 175.2,202.5 175.2,124.5 159.9,115.7"/><polygon class="iso-right" points="251.7,158.3 175.2,202.5 175.2,124.5 251.7,80.3"/><polygon class="iso-top" points="236.4,71.5 251.7,80.3 175.2,124.5 159.9,115.7"/><polyline class="iso-detail" points="251.7,142.7 175.2,186.9"/><polyline class="iso-detail" points="251.7,127.1 175.2,171.3"/><polyline class="iso-detail" points="251.7,111.5 175.2,155.7"/><polyline class="iso-detail" points="251.7,95.9 175.2,140.1"/><polyline class="iso-detail" points="233.7,168.7 233.7,153.1"/><polyline class="iso-detail" points="209.0,183.0 209.0,167.4"/><polyline class="iso-detail" points="184.2,197.3 184.2,181.7"/><polyline class="iso-detail" points="245.9,146.1 245.9,130.5"/><polyline class="iso-detail" points="221.1,160.4 221.1,144.8"/><polyline class="iso-detail" points="196.3,174.7 196.3,159.1"/><polyline class="iso-detail" points="233.7,137.5 233.7,121.9"/><polyline class="iso-detail" points="209.0,151.8 209.0,136.2"/><polyline class="iso-detail" points="184.2,166.1 184.2,150.5"/><polyline class="iso-detail" points="245.9,114.9 245.9,99.3"/><polyline class="iso-detail" points="221.1,129.2 221.1,113.6"/><polyline class="iso-detail" points="196.3,143.5 196.3,127.9"/><polyline class="iso-detail" points="233.7,106.3 233.7,90.7"/><polyline class="iso-detail" points="209.0,120.6 209.0,105.0"/><polyline class="iso-detail" points="184.2,134.9 184.2,119.3"/>
+                    <polygon class="iso-left" points="-20.3,178.1 69.8,230.1 69.8,214.5 -20.3,162.5"/><polygon class="iso-right" points="108.1,208.0 69.8,230.1 69.8,214.5 108.1,192.4"/><polygon class="iso-top" points="18.0,140.4 108.1,192.4 69.8,214.5 -20.3,162.5"/><polygon class="iso-port" points="-11.0,178.8 -3.8,182.9 -3.8,176.7 -11.0,172.5"/><polygon class="iso-port" points="1.9,186.2 9.1,190.4 9.1,184.1 1.9,180.0"/><polygon class="iso-port" points="14.7,193.6 21.9,197.8 21.9,191.5 14.7,187.4"/><polygon class="iso-port" points="27.6,201.1 34.8,205.2 34.8,199.0 27.6,194.8"/><polygon class="iso-port" points="40.5,208.5 47.7,212.6 47.7,206.4 40.5,202.2"/><polygon class="iso-port" points="53.3,215.9 60.5,220.1 60.5,213.8 53.3,209.7"/>
+                    <polygon class="iso-left" points="240.9,224.9 295.0,256.1 295.0,243.6 240.9,212.4"/><polygon class="iso-right" points="344.5,227.5 295.0,256.1 295.0,243.6 344.5,215.0"/><polygon class="iso-top" points="290.5,183.8 344.5,215.0 295.0,243.6 240.9,212.4"/>
+                    <polygon class="iso-left" points="-144.1,234.0 -103.6,257.4 -103.6,218.4 -144.1,195.0"/><polygon class="iso-right" points="-67.5,236.6 -103.6,257.4 -103.6,218.4 -67.5,197.6"/><polygon class="iso-top end" points="-108.1,174.2 -67.5,197.6 -103.6,218.4 -144.1,195.0"/><polygon class="iso-screen" points="-137.8,230.4 -109.9,246.5 -109.9,222.0 -137.8,205.9"/>
+                    <polygon class="iso-left" points="-67.5,278.2 -27.0,301.6 -27.0,262.6 -67.5,239.2"/><polygon class="iso-right" points="9.0,280.8 -27.0,301.6 -27.0,262.6 9.0,241.8"/><polygon class="iso-top" points="-31.5,218.4 9.0,241.8 -27.0,262.6 -67.5,239.2"/><polygon class="iso-screen" points="-61.2,274.6 -33.3,290.7 -33.3,266.2 -61.2,250.1"/>
+                    <polygon class="iso-left" points="9.0,322.4 49.5,345.8 49.5,306.8 9.0,283.4"/><polygon class="iso-right" points="85.6,325.0 49.5,345.8 49.5,306.8 85.6,286.0"/><polygon class="iso-top" points="45.0,262.6 85.6,286.0 49.5,306.8 9.0,283.4"/><polygon class="iso-screen" points="15.3,318.8 43.2,334.9 43.2,310.4 15.3,294.3"/>
+                    <polygon class="iso-flash" points="0.0,-52.0 45.0,-26.0 0.0,-0.0 -45.0,-26.0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.36;0.375;0.43;1" values="0;0;0.75;0;0"/></polygon>
+                    <polygon class="iso-flash" points="-108.1,174.2 -67.5,197.6 -103.6,218.4 -144.1,195.0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.84;0.855;0.91;1" values="0;0;0.75;0;0"/></polygon>
+                    <path class="iso-cross" d="M222.0 142.7 L232.0 152.7 M232.0 142.7 L222.0 152.7"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.14;0.16;0.66;0.72;1" values="0;0;1;1;0;0"/></path>
+                    <g><path class="iso-leader" d="M4.8 -50.0 L-40.0 -24.0"/><rect class="iso-note" x="-309.2" y="-90.0" width="314" height="61"/><text class="iso-note-text strong" x="-296.2" y="-65.0" xml:space="preserve">ping &#8594; risposta</text><text class="iso-note-text" x="-296.2" y="-44.0" xml:space="preserve">andata e ritorno, salto per salto</text></g>
+                    <g><path class="iso-leader" d="M262.3 385.0 L229.0 179.4"/><rect class="iso-note" x="146.3" y="385.0" width="232" height="61"/><text class="iso-note-text strong" x="159.3" y="410.0" xml:space="preserve">ping &#8594; fermato qui</text><text class="iso-note-text" x="159.3" y="431.0" xml:space="preserve">la risposta dice perché</text></g>
+                    <path class="iso-mark" d="M-322.2 -96.0 H-308.2 M-315.2 -103.0 V-89.0"/>
+                    <path class="iso-mark" d="M-322.2 464.0 H-308.2 M-315.2 457.0 V471.0"/>
+                    <path class="iso-mark" d="M389.3 -96.0 H403.3 M396.3 -103.0 V-89.0"/>
+                    <path class="iso-mark" d="M389.3 464.0 H403.3 M396.3 457.0 V471.0"/>
+                    </svg>
+                    <!-- /drawing:hero -->
+                </div>
+            </div>
+
+            <section class="block grid" aria-labelledby="what-title">
+                <div class="c-margin"><span class="label">Cosa fa</span></div>
+                <p class="statement" id="what-title">
+                    Un solo posto per fare tre cose con una rete. Sullo stesso disegno.
+                </p>
+                <ol class="index">
+                    <li>
+                        <a href="#design">
+                            <span class="numeral" aria-hidden="true">01</span>
+                            <b>Disegna</b>
+                            <span class="what">Disegnala, e dietro ogni linea c'è la configurazione vera.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#ask">
+                            <span class="numeral" aria-hidden="true">02</span>
+                            <b>Chiedi</b>
+                            <span class="what">Questo raggiunge quello? Salto per salto, con il motivo.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#present">
+                            <span class="numeral" aria-hidden="true">03</span>
+                            <b>Presenta</b>
+                            <span class="what">Mostrala, rompi qualcosa, guarda cosa funziona ancora.</span>
+                        </a>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="block tight grid verb" id="design" aria-labelledby="design-title">
+                <div class="verb-text">
+                    <span class="numeral" aria-hidden="true">01</span>
+                    <h2 id="design-title">Disegna</h2>
+                    <p>
+                        Disegnala come su una lavagna, con la configurazione vera dietro ogni linea.
+                        Di qualunque vendor, o di nessuno.
+                    </p>
+                    <ul class="pixels">
+                        <li>Ventiquattro tipi di dispositivo, ciascuno con il suo disegno</li>
+                        <li>Indirizzi su ogni porta dei router e su ogni scheda di rete</li>
+                        <li>VLAN porta per porta, di accesso e trunk, ognuna con un nome che vale per tutto il progetto</li>
+                        <li>Rotte statiche, con una di riserva per quando la linea cade</li>
+                        <li>Zone di sicurezza e regole del firewall, in ordine</li>
+                        <li>NAT verso Internet, e inoltri per ciò che va raggiunto da fuori</li>
+                        <li>DHCP per chi prende l'indirizzo da solo, DNS per chiamare un dispositivo per nome</li>
+                        <li>Riquadri con un nome dietro i gruppi di dispositivi, e una nota su qualunque dispositivo</li>
+                    </ul>
+                </div>
+                <div class="verb-drawing">
+                    <!-- drawing:design -->
+                    <svg class="iso" viewBox="-314 -70 655 552" data-still="7.4" role="img" aria-label="Una rete mentre viene disegnata: sul canvas ci sono un router, un server, uno switch e un PC. Arriva un secondo PC, si disegna il suo cavo verso lo switch, e accanto compaiono il suo indirizzo, il gateway e la VLAN.">
+                    <polygon class="iso-foot" points="0.0,52.0 315.2,234.0 27.0,400.4 -288.2,218.4"/>
+                    <polygon class="iso-left" points="-288.2,182.0 27.0,364.0 27.0,348.4 -288.2,166.4"/>
+                    <polygon class="iso-right" points="315.2,197.6 27.0,364.0 27.0,348.4 315.2,182.0"/>
+                    <polygon class="iso-board" points="0.0,0.0 315.2,182.0 27.0,348.4 -288.2,166.4"/>
+                    <g class="iso-dots"><circle cx="0.0" cy="31.2" r="1"/><circle cx="-27.0" cy="46.8" r="1"/><circle cx="-54.0" cy="62.4" r="1"/><circle cx="-81.1" cy="78.0" r="1"/><circle cx="-108.1" cy="93.6" r="1"/><circle cx="-135.1" cy="109.2" r="1"/><circle cx="-162.1" cy="124.8" r="1"/><circle cx="-189.1" cy="140.4" r="1"/><circle cx="-216.2" cy="156.0" r="1"/><circle cx="-243.2" cy="171.6" r="1"/><circle cx="27.0" cy="46.8" r="1"/><circle cx="0.0" cy="62.4" r="1"/><circle cx="-27.0" cy="78.0" r="1"/><circle cx="-54.0" cy="93.6" r="1"/><circle cx="-81.1" cy="109.2" r="1"/><circle cx="-108.1" cy="124.8" r="1"/><circle cx="-135.1" cy="140.4" r="1"/><circle cx="-162.1" cy="156.0" r="1"/><circle cx="-189.1" cy="171.6" r="1"/><circle cx="-216.2" cy="187.2" r="1"/><circle cx="54.0" cy="62.4" r="1"/><circle cx="27.0" cy="78.0" r="1"/><circle cx="0.0" cy="93.6" r="1"/><circle cx="-27.0" cy="109.2" r="1"/><circle cx="-54.0" cy="124.8" r="1"/><circle cx="-81.1" cy="140.4" r="1"/><circle cx="-108.1" cy="156.0" r="1"/><circle cx="-135.1" cy="171.6" r="1"/><circle cx="-162.1" cy="187.2" r="1"/><circle cx="-189.1" cy="202.8" r="1"/><circle cx="81.1" cy="78.0" r="1"/><circle cx="54.0" cy="93.6" r="1"/><circle cx="27.0" cy="109.2" r="1"/><circle cx="0.0" cy="124.8" r="1"/><circle cx="-27.0" cy="140.4" r="1"/><circle cx="-54.0" cy="156.0" r="1"/><circle cx="-81.1" cy="171.6" r="1"/><circle cx="-108.1" cy="187.2" r="1"/><circle cx="-135.1" cy="202.8" r="1"/><circle cx="-162.1" cy="218.4" r="1"/><circle cx="108.1" cy="93.6" r="1"/><circle cx="81.1" cy="109.2" r="1"/><circle cx="54.0" cy="124.8" r="1"/><circle cx="27.0" cy="140.4" r="1"/><circle cx="0.0" cy="156.0" r="1"/><circle cx="-27.0" cy="171.6" r="1"/><circle cx="-54.0" cy="187.2" r="1"/><circle cx="-81.1" cy="202.8" r="1"/><circle cx="-108.1" cy="218.4" r="1"/><circle cx="-135.1" cy="234.0" r="1"/><circle cx="135.1" cy="109.2" r="1"/><circle cx="108.1" cy="124.8" r="1"/><circle cx="81.1" cy="140.4" r="1"/><circle cx="54.0" cy="156.0" r="1"/><circle cx="27.0" cy="171.6" r="1"/><circle cx="0.0" cy="187.2" r="1"/><circle cx="-27.0" cy="202.8" r="1"/><circle cx="-54.0" cy="218.4" r="1"/><circle cx="-81.1" cy="234.0" r="1"/><circle cx="-108.1" cy="249.6" r="1"/><circle cx="162.1" cy="124.8" r="1"/><circle cx="135.1" cy="140.4" r="1"/><circle cx="108.1" cy="156.0" r="1"/><circle cx="81.1" cy="171.6" r="1"/><circle cx="54.0" cy="187.2" r="1"/><circle cx="27.0" cy="202.8" r="1"/><circle cx="0.0" cy="218.4" r="1"/><circle cx="-27.0" cy="234.0" r="1"/><circle cx="-54.0" cy="249.6" r="1"/><circle cx="-81.1" cy="265.2" r="1"/><circle cx="189.1" cy="140.4" r="1"/><circle cx="162.1" cy="156.0" r="1"/><circle cx="135.1" cy="171.6" r="1"/><circle cx="108.1" cy="187.2" r="1"/><circle cx="81.1" cy="202.8" r="1"/><circle cx="54.0" cy="218.4" r="1"/><circle cx="27.0" cy="234.0" r="1"/><circle cx="0.0" cy="249.6" r="1"/><circle cx="-27.0" cy="265.2" r="1"/><circle cx="-54.0" cy="280.8" r="1"/><circle cx="216.2" cy="156.0" r="1"/><circle cx="189.1" cy="171.6" r="1"/><circle cx="162.1" cy="187.2" r="1"/><circle cx="135.1" cy="202.8" r="1"/><circle cx="108.1" cy="218.4" r="1"/><circle cx="81.1" cy="234.0" r="1"/><circle cx="54.0" cy="249.6" r="1"/><circle cx="27.0" cy="265.2" r="1"/><circle cx="0.0" cy="280.8" r="1"/><circle cx="-27.0" cy="296.4" r="1"/><circle cx="243.2" cy="171.6" r="1"/><circle cx="216.2" cy="187.2" r="1"/><circle cx="189.1" cy="202.8" r="1"/><circle cx="162.1" cy="218.4" r="1"/><circle cx="135.1" cy="234.0" r="1"/><circle cx="108.1" cy="249.6" r="1"/><circle cx="81.1" cy="265.2" r="1"/><circle cx="54.0" cy="280.8" r="1"/><circle cx="27.0" cy="296.4" r="1"/><circle cx="0.0" cy="312.0" r="1"/><circle cx="270.2" cy="187.2" r="1"/><circle cx="243.2" cy="202.8" r="1"/><circle cx="216.2" cy="218.4" r="1"/><circle cx="189.1" cy="234.0" r="1"/><circle cx="162.1" cy="249.6" r="1"/><circle cx="135.1" cy="265.2" r="1"/><circle cx="108.1" cy="280.8" r="1"/><circle cx="81.1" cy="296.4" r="1"/><circle cx="54.0" cy="312.0" r="1"/><circle cx="27.0" cy="327.6" r="1"/></g>
+                    <polyline class="iso-cable" points="103.6,126.9 12.4,179.5"/>
+                    <polyline class="iso-cable" points="103.6,126.9 202.6,184.1"/>
+                    <polyline class="iso-cable" points="12.4,179.5 -27.0,202.3"/>
+                    <polyline class="iso-cable" points="-85.6,168.5 -27.0,202.3"/>
+                    <polyline class="iso-cable" points="-85.6,168.5 -148.6,204.9"/>
+                    <polyline class="iso-cable drawn" points="-27.0,202.3 31.5,236.1 -31.5,272.5" stroke-dasharray="140.4" stroke-dashoffset="140.4"><animate attributeName="stroke-dashoffset" dur="9s" repeatCount="indefinite" keyTimes="0;0.22;0.4;0.94;0.98;1" values="140.4;140.4;0;0;140.4;140.4"/></polyline>
+                    <polygon class="iso-foot" points="103.6,88.9 170.2,127.4 103.6,165.9 36.9,127.4"/>
+                    <polygon class="iso-foot" points="202.6,151.3 260.3,184.6 202.6,217.9 145.0,184.6"/>
+                    <polygon class="iso-foot" points="-13.5,135.7 89.2,195.0 38.3,224.4 -64.4,165.1"/>
+                    <polygon class="iso-foot" points="-150.9,176.0 -97.7,206.7 -146.4,234.8 -199.5,204.1"/>
+                    <polygon class="iso-foot" points="-33.8,243.6 19.4,274.3 -29.3,302.4 -82.4,271.7"/>
+                    <polygon class="iso-left" points="49.5,127.4 103.6,158.6 103.6,132.6 49.5,101.4"/><polygon class="iso-right" points="157.6,127.4 103.6,158.6 103.6,132.6 157.6,101.4"/><polygon class="iso-top" points="103.6,70.2 157.6,101.4 103.6,132.6 49.5,101.4"/><polygon class="iso-port" points="59.4,123.8 64.8,126.9 64.8,119.6 59.4,116.5"/><polygon class="iso-port" points="69.4,129.5 74.8,132.6 74.8,125.3 69.4,122.2"/><polygon class="iso-port" points="79.3,135.2 84.7,138.3 84.7,131.0 79.3,127.9"/>
+                    <polygon class="iso-left" points="157.6,184.6 202.6,210.6 202.6,127.4 157.6,101.4"/><polygon class="iso-right" points="247.7,184.6 202.6,210.6 202.6,127.4 247.7,101.4"/><polygon class="iso-top" points="202.6,75.4 247.7,101.4 202.6,127.4 157.6,101.4"/><polyline class="iso-detail" points="241.4,174.4 209.0,193.1"/><polyline class="iso-detail" points="241.4,160.5 209.0,179.2"/><polyline class="iso-detail" points="241.4,146.6 209.0,165.4"/><polyline class="iso-detail" points="241.4,132.8 209.0,151.5"/><polyline class="iso-detail" points="241.4,118.9 209.0,137.6"/>
+                    <polygon class="iso-left" points="-51.8,165.1 38.3,217.1 38.3,201.5 -51.8,149.5"/><polygon class="iso-right" points="76.6,195.0 38.3,217.1 38.3,201.5 76.6,179.4"/><polygon class="iso-top" points="-13.5,127.4 76.6,179.4 38.3,201.5 -51.8,149.5"/><polygon class="iso-port" points="-42.5,165.8 -35.3,169.9 -35.3,163.7 -42.5,159.5"/><polygon class="iso-port" points="-29.7,173.2 -22.5,177.4 -22.5,171.1 -29.7,167.0"/><polygon class="iso-port" points="-16.8,180.6 -9.6,184.8 -9.6,178.5 -16.8,174.4"/><polygon class="iso-port" points="-3.9,188.1 3.3,192.2 3.3,186.0 -3.9,181.8"/><polygon class="iso-port" points="8.9,195.5 16.1,199.6 16.1,193.4 8.9,189.2"/><polygon class="iso-port" points="21.8,202.9 29.0,207.1 29.0,200.8 21.8,196.7"/>
+                    <polygon class="iso-left" points="-186.9,204.1 -146.4,227.5 -146.4,188.5 -186.9,165.1"/><polygon class="iso-right" points="-110.3,206.7 -146.4,227.5 -146.4,188.5 -110.3,167.7"/><polygon class="iso-top" points="-150.9,144.3 -110.3,167.7 -146.4,188.5 -186.9,165.1"/><polygon class="iso-screen" points="-180.6,200.5 -152.7,216.6 -152.7,192.1 -180.6,176.0"/>
+                    <g opacity="0"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.03;0.08;0.94;0.98;1" values="0;0;1;1;0;0"/><animateTransform attributeName="transform" type="translate" dur="9s" repeatCount="indefinite" keyTimes="0;0.04;0.2;1" values="0 -86;0 -86;0 0;0 0" calcMode="spline" keySplines="0 0 1 1;0.3 0 0.2 1;0 0 1 1"/><polygon class="iso-left" points="-69.8,271.7 -29.3,295.1 -29.3,256.1 -69.8,232.7"/><polygon class="iso-right" points="6.8,274.3 -29.3,295.1 -29.3,256.1 6.8,235.3"/><polygon class="iso-top end" points="-33.8,211.9 6.8,235.3 -29.3,256.1 -69.8,232.7"/><polygon class="iso-screen" points="-63.5,268.1 -35.6,284.2 -35.6,259.7 -63.5,243.6"/></g>
+                    <g><rect class="iso-tag" x="30.3" y="141.1" width="60.8" height="20"/><text class="iso-tag-text" x="60.7" y="155.1" text-anchor="middle">VLAN 10</text></g>
+                    <g opacity="0"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.4;0.42;0.94;0.96;1" values="0;0;1;1;0;0"/><rect class="iso-tag" x="-29.0" y="202.1" width="53.4" height="20"/><text class="iso-tag-text" x="-2.3" y="216.1" text-anchor="middle">1 Gbps</text></g>
+                    <g opacity="0"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.42;0.44;0.94;0.96;1" values="0;0;1;1;0;0"/><g><path class="iso-leader" d="M-176.2 51.0 L-37.5 238.0"/><rect class="iso-note" x="-292.2" y="-52.0" width="232" height="103"/><text class="iso-note-text strong" x="-279.2" y="-27.0" xml:space="preserve">PC-2</text><text class="iso-note-text" x="-279.2" y="-6.0" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.48;0.5;0.94;0.98;1" values="0;0;1;1;0;0"/>indirizzo 192.168.10.12</text><text class="iso-note-text" x="-279.2" y="15.0" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.56;0.58;0.94;0.98;1" values="0;0;1;1;0;0"/>gateway   192.168.10.1</text><text class="iso-note-text" x="-279.2" y="36.0" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.64;0.66;0.94;0.98;1" values="0;0;1;1;0;0"/>VLAN      10</text></g></g>
+                    <path class="iso-mark" d="M-313.2 -62.0 H-299.2 M-306.2 -69.0 V-55.0"/>
+                    <path class="iso-mark" d="M-313.2 474.4 H-299.2 M-306.2 467.4 V481.4"/>
+                    <path class="iso-mark" d="M326.2 -62.0 H340.2 M333.2 -69.0 V-55.0"/>
+                    <path class="iso-mark" d="M326.2 474.4 H340.2 M333.2 467.4 V481.4"/>
+                    </svg>
+                    <!-- /drawing:design -->
+                </div>
+            </section>
+
+            <section class="block tight grid verb" id="ask" aria-labelledby="ask-title">
+                <div class="verb-text">
+                    <span class="numeral" aria-hidden="true">02</span>
+                    <h2 id="ask-title">Chiedi</h2>
+                    <p>
+                        Chiedi a parole semplici: questo raggiunge quello? Il pacchetto viene seguito salto per salto,
+                        e la risposta dice quale dispositivo ha deciso, e con quale porta, rotta
+                        o regola.
+                    </p>
+                    <p>
+                        Da un pannello con due menu, oppure dal terminale integrato: un piccolo
+                        linguaggio di comandi in inglese, uguale per ogni vendor, senza sintassi proprietarie da ricordare.
+                    </p>
+                </div>
+                <div class="verb-drawing">
+                    <!-- drawing:ask -->
+                    <svg class="iso" viewBox="-413 -70 655 552" data-still="8.6" role="img" aria-label="Un pacchetto va da un PC a un server passando da uno switch, un router e un firewall. Ogni dispositivo che attraversa prende il suo numero, e una nota elenca i cinque salti con quello che ha fatto ciascun dispositivo.">
+                    <polygon class="iso-foot" points="0.0,52.0 216.2,176.8 -171.1,400.4 -387.3,275.6"/>
+                    <polygon class="iso-left" points="-387.3,239.2 -171.1,364.0 -171.1,348.4 -387.3,223.6"/>
+                    <polygon class="iso-right" points="216.2,140.4 -171.1,364.0 -171.1,348.4 216.2,124.8"/>
+                    <polygon class="iso-board" points="0.0,0.0 216.2,124.8 -171.1,348.4 -387.3,223.6"/>
+                    <g class="iso-dots"><circle cx="0.0" cy="31.2" r="1"/><circle cx="-27.0" cy="46.8" r="1"/><circle cx="-54.0" cy="62.4" r="1"/><circle cx="-81.1" cy="78.0" r="1"/><circle cx="-108.1" cy="93.6" r="1"/><circle cx="-135.1" cy="109.2" r="1"/><circle cx="-162.1" cy="124.8" r="1"/><circle cx="-189.1" cy="140.4" r="1"/><circle cx="-216.2" cy="156.0" r="1"/><circle cx="-243.2" cy="171.6" r="1"/><circle cx="-270.2" cy="187.2" r="1"/><circle cx="-297.2" cy="202.8" r="1"/><circle cx="-324.2" cy="218.4" r="1"/><circle cx="-351.3" cy="234.0" r="1"/><circle cx="27.0" cy="46.8" r="1"/><circle cx="0.0" cy="62.4" r="1"/><circle cx="-27.0" cy="78.0" r="1"/><circle cx="-54.0" cy="93.6" r="1"/><circle cx="-81.1" cy="109.2" r="1"/><circle cx="-108.1" cy="124.8" r="1"/><circle cx="-135.1" cy="140.4" r="1"/><circle cx="-162.1" cy="156.0" r="1"/><circle cx="-189.1" cy="171.6" r="1"/><circle cx="-216.2" cy="187.2" r="1"/><circle cx="-243.2" cy="202.8" r="1"/><circle cx="-270.2" cy="218.4" r="1"/><circle cx="-297.2" cy="234.0" r="1"/><circle cx="-324.2" cy="249.6" r="1"/><circle cx="54.0" cy="62.4" r="1"/><circle cx="27.0" cy="78.0" r="1"/><circle cx="0.0" cy="93.6" r="1"/><circle cx="-27.0" cy="109.2" r="1"/><circle cx="-54.0" cy="124.8" r="1"/><circle cx="-81.1" cy="140.4" r="1"/><circle cx="-108.1" cy="156.0" r="1"/><circle cx="-135.1" cy="171.6" r="1"/><circle cx="-162.1" cy="187.2" r="1"/><circle cx="-189.1" cy="202.8" r="1"/><circle cx="-216.2" cy="218.4" r="1"/><circle cx="-243.2" cy="234.0" r="1"/><circle cx="-270.2" cy="249.6" r="1"/><circle cx="-297.2" cy="265.2" r="1"/><circle cx="81.1" cy="78.0" r="1"/><circle cx="54.0" cy="93.6" r="1"/><circle cx="27.0" cy="109.2" r="1"/><circle cx="0.0" cy="124.8" r="1"/><circle cx="-27.0" cy="140.4" r="1"/><circle cx="-54.0" cy="156.0" r="1"/><circle cx="-81.1" cy="171.6" r="1"/><circle cx="-108.1" cy="187.2" r="1"/><circle cx="-135.1" cy="202.8" r="1"/><circle cx="-162.1" cy="218.4" r="1"/><circle cx="-189.1" cy="234.0" r="1"/><circle cx="-216.2" cy="249.6" r="1"/><circle cx="-243.2" cy="265.2" r="1"/><circle cx="-270.2" cy="280.8" r="1"/><circle cx="108.1" cy="93.6" r="1"/><circle cx="81.1" cy="109.2" r="1"/><circle cx="54.0" cy="124.8" r="1"/><circle cx="27.0" cy="140.4" r="1"/><circle cx="0.0" cy="156.0" r="1"/><circle cx="-27.0" cy="171.6" r="1"/><circle cx="-54.0" cy="187.2" r="1"/><circle cx="-81.1" cy="202.8" r="1"/><circle cx="-108.1" cy="218.4" r="1"/><circle cx="-135.1" cy="234.0" r="1"/><circle cx="-162.1" cy="249.6" r="1"/><circle cx="-189.1" cy="265.2" r="1"/><circle cx="-216.2" cy="280.8" r="1"/><circle cx="-243.2" cy="296.4" r="1"/><circle cx="135.1" cy="109.2" r="1"/><circle cx="108.1" cy="124.8" r="1"/><circle cx="81.1" cy="140.4" r="1"/><circle cx="54.0" cy="156.0" r="1"/><circle cx="27.0" cy="171.6" r="1"/><circle cx="0.0" cy="187.2" r="1"/><circle cx="-27.0" cy="202.8" r="1"/><circle cx="-54.0" cy="218.4" r="1"/><circle cx="-81.1" cy="234.0" r="1"/><circle cx="-108.1" cy="249.6" r="1"/><circle cx="-135.1" cy="265.2" r="1"/><circle cx="-162.1" cy="280.8" r="1"/><circle cx="-189.1" cy="296.4" r="1"/><circle cx="-216.2" cy="312.0" r="1"/><circle cx="162.1" cy="124.8" r="1"/><circle cx="135.1" cy="140.4" r="1"/><circle cx="108.1" cy="156.0" r="1"/><circle cx="81.1" cy="171.6" r="1"/><circle cx="54.0" cy="187.2" r="1"/><circle cx="27.0" cy="202.8" r="1"/><circle cx="0.0" cy="218.4" r="1"/><circle cx="-27.0" cy="234.0" r="1"/><circle cx="-54.0" cy="249.6" r="1"/><circle cx="-81.1" cy="265.2" r="1"/><circle cx="-108.1" cy="280.8" r="1"/><circle cx="-135.1" cy="296.4" r="1"/><circle cx="-162.1" cy="312.0" r="1"/><circle cx="-189.1" cy="327.6" r="1"/></g>
+                    <polyline class="iso-cable" points="-229.7,256.4 58.5,90.0"/>
+                    <polygon class="iso-foot" points="-231.9,228.0 -178.8,258.7 -227.4,286.8 -280.6,256.1"/>
+                    <polygon class="iso-foot" points="-183.3,171.3 -80.6,230.6 -131.5,260.0 -234.2,200.7"/>
+                    <polygon class="iso-foot" points="-90.1,138.3 -23.4,176.8 -90.1,215.3 -156.7,176.8"/>
+                    <polygon class="iso-foot" points="-60.8,108.4 28.4,159.9 0.5,176.0 -88.7,124.5"/>
+                    <polygon class="iso-foot" points="58.5,57.7 116.2,91.0 58.5,124.3 0.9,91.0"/>
+                    <polyline class="iso-way" points="-229.7,256.4 58.5,90.0"/>
+                    <g class="iso-px"><animateMotion dur="10s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.6;1" keyPoints="0;1;1" path="M-229.7 256.4 L58.5 90.0"/><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.6;0.63;1" values="1;1;0;0"/><polygon class="iso-left" points="-11.7,-1.0 0.0,5.7 0.0,-7.8 -11.7,-14.6"/><polygon class="iso-right" points="11.7,-1.0 0.0,5.7 0.0,-7.8 11.7,-14.6"/><polygon class="iso-top" points="0.0,-21.3 11.7,-14.6 0.0,-7.8 -11.7,-14.6"/></g>
+                    <polygon class="iso-left" points="13.5,91.0 58.5,117.0 58.5,33.8 13.5,7.8"/><polygon class="iso-right" points="103.6,91.0 58.5,117.0 58.5,33.8 103.6,7.8"/><polygon class="iso-top end" points="58.5,-18.2 103.6,7.8 58.5,33.8 13.5,7.8"/><polyline class="iso-detail" points="97.3,80.8 64.8,99.5"/><polyline class="iso-detail" points="97.3,66.9 64.8,85.6"/><polyline class="iso-detail" points="97.3,53.0 64.8,71.8"/><polyline class="iso-detail" points="97.3,39.2 64.8,57.9"/><polyline class="iso-detail" points="97.3,25.3 64.8,44.0"/>
+                    <polygon class="iso-left" points="-76.1,124.5 0.5,168.7 0.5,90.7 -76.1,46.5"/><polygon class="iso-right" points="15.8,159.9 0.5,168.7 0.5,90.7 15.8,81.9"/><polygon class="iso-top" points="-60.8,37.7 15.8,81.9 0.5,90.7 -76.1,46.5"/><polyline class="iso-detail" points="-76.1,108.9 0.5,153.1"/><polyline class="iso-detail" points="-76.1,93.3 0.5,137.5"/><polyline class="iso-detail" points="-76.1,77.7 0.5,121.9"/><polyline class="iso-detail" points="-76.1,62.1 0.5,106.3"/><polyline class="iso-detail" points="-58.1,134.9 -58.1,119.3"/><polyline class="iso-detail" points="-33.3,149.2 -33.3,133.6"/><polyline class="iso-detail" points="-8.6,163.5 -8.6,147.9"/><polyline class="iso-detail" points="-70.3,112.3 -70.3,96.7"/><polyline class="iso-detail" points="-45.5,126.6 -45.5,111.0"/><polyline class="iso-detail" points="-20.7,140.9 -20.7,125.3"/><polyline class="iso-detail" points="-58.1,103.7 -58.1,88.1"/><polyline class="iso-detail" points="-33.3,118.0 -33.3,102.4"/><polyline class="iso-detail" points="-8.6,132.3 -8.6,116.7"/><polyline class="iso-detail" points="-70.3,81.1 -70.3,65.5"/><polyline class="iso-detail" points="-45.5,95.4 -45.5,79.8"/><polyline class="iso-detail" points="-20.7,109.7 -20.7,94.1"/><polyline class="iso-detail" points="-58.1,72.5 -58.1,56.9"/><polyline class="iso-detail" points="-33.3,86.8 -33.3,71.2"/><polyline class="iso-detail" points="-8.6,101.1 -8.6,85.5"/>
+                    <polygon class="iso-left" points="-144.1,176.8 -90.1,208.0 -90.1,182.0 -144.1,150.8"/><polygon class="iso-right" points="-36.0,176.8 -90.1,208.0 -90.1,182.0 -36.0,150.8"/><polygon class="iso-top" points="-90.1,119.6 -36.0,150.8 -90.1,182.0 -144.1,150.8"/><polygon class="iso-port" points="-134.2,173.2 -128.8,176.3 -128.8,169.0 -134.2,165.9"/><polygon class="iso-port" points="-124.3,178.9 -118.9,182.0 -118.9,174.7 -124.3,171.6"/><polygon class="iso-port" points="-114.4,184.6 -109.0,187.7 -109.0,180.4 -114.4,177.3"/>
+                    <polygon class="iso-left" points="-221.6,200.7 -131.5,252.7 -131.5,237.1 -221.6,185.1"/><polygon class="iso-right" points="-93.2,230.6 -131.5,252.7 -131.5,237.1 -93.2,215.0"/><polygon class="iso-top" points="-183.3,163.0 -93.2,215.0 -131.5,237.1 -221.6,185.1"/><polygon class="iso-port" points="-212.3,201.4 -205.1,205.5 -205.1,199.3 -212.3,195.1"/><polygon class="iso-port" points="-199.4,208.8 -192.2,213.0 -192.2,206.7 -199.4,202.6"/><polygon class="iso-port" points="-186.6,216.2 -179.4,220.4 -179.4,214.2 -186.6,210.0"/><polygon class="iso-port" points="-173.7,223.7 -166.5,227.8 -166.5,221.6 -173.7,217.4"/><polygon class="iso-port" points="-160.8,231.1 -153.6,235.3 -153.6,229.0 -160.8,224.9"/><polygon class="iso-port" points="-148.0,238.5 -140.8,242.7 -140.8,236.5 -148.0,232.3"/>
+                    <polygon class="iso-left" points="-267.9,256.1 -227.4,279.5 -227.4,240.5 -267.9,217.1"/><polygon class="iso-right" points="-191.4,258.7 -227.4,279.5 -227.4,240.5 -191.4,219.7"/><polygon class="iso-top end" points="-231.9,196.3 -191.4,219.7 -227.4,240.5 -267.9,217.1"/><polygon class="iso-screen" points="-261.6,252.5 -233.7,268.6 -233.7,244.1 -261.6,228.0"/>
+                    <line class="iso-stem" x1="-299.4" y1="201.5" x2="-255.3" y2="227.0"/>
+                    <circle class="iso-badge" cx="-309.8" cy="195.5" r="12"/><text class="iso-badge-text" x="-309.8" y="200.0" text-anchor="middle">1</text><g opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.94;0.98;0.999;1" values="1;1;0;0;1"/><circle class="iso-badge on" cx="-309.8" cy="195.5" r="12"/><text class="iso-badge-text on" x="-309.8" y="200.0" text-anchor="middle">1</text></g>
+                    <polygon class="iso-flash" points="-231.9,196.3 -191.4,219.7 -227.4,240.5 -267.9,217.1"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;1" values="0;0"/></polygon>
+                    <line class="iso-stem" x1="-227.2" y1="159.8" x2="-207.8" y2="170.9"/>
+                    <circle class="iso-badge" cx="-237.6" cy="153.8" r="12"/><text class="iso-badge-text" x="-237.6" y="158.3" text-anchor="middle">2</text><g opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.15;0.17;0.94;0.98;1" values="0;0;1;1;0;0"/><circle class="iso-badge on" cx="-237.6" cy="153.8" r="12"/><text class="iso-badge-text on" x="-237.6" y="158.3" text-anchor="middle">2</text></g>
+                    <polygon class="iso-flash" points="-183.3,163.0 -93.2,215.0 -131.5,237.1 -221.6,185.1"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.15;0.165;0.22;1" values="0;0;0.75;0;0"/></polygon>
+                    <line class="iso-stem" x1="-159.8" y1="120.9" x2="-122.5" y2="142.5"/>
+                    <circle class="iso-badge" cx="-170.2" cy="114.9" r="12"/><text class="iso-badge-text" x="-170.2" y="119.4" text-anchor="middle">3</text><g opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.291;0.311;0.94;0.98;1" values="0;0;1;1;0;0"/><circle class="iso-badge on" cx="-170.2" cy="114.9" r="12"/><text class="iso-badge-text on" x="-170.2" y="119.4" text-anchor="middle">3</text></g>
+                    <polygon class="iso-flash" points="-90.1,119.6 -36.0,150.8 -90.1,182.0 -144.1,150.8"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.291;0.306;0.361;1" values="0;0;0.75;0;0"/></polygon>
+                    <line class="iso-stem" x1="-99.9" y1="86.3" x2="-73.9" y2="101.4"/>
+                    <circle class="iso-badge" cx="-110.3" cy="80.3" r="12"/><text class="iso-badge-text" x="-110.3" y="84.8" text-anchor="middle">4</text><g opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.415;0.435;0.94;0.98;1" values="0;0;1;1;0;0"/><circle class="iso-badge on" cx="-110.3" cy="80.3" r="12"/><text class="iso-badge-text on" x="-110.3" y="84.8" text-anchor="middle">4</text></g>
+                    <polygon class="iso-flash" points="-60.8,37.7 15.8,81.9 0.5,90.7 -76.1,46.5"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.415;0.43;0.485;1" values="0;0;0.75;0;0"/></polygon>
+                    <line class="iso-stem" x1="-11.2" y1="35.1" x2="30.6" y2="59.3"/>
+                    <circle class="iso-badge" cx="-21.6" cy="29.1" r="12"/><text class="iso-badge-text" x="-21.6" y="33.6" text-anchor="middle">5</text><g opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.6;0.62;0.94;0.98;1" values="0;0;1;1;0;0"/><circle class="iso-badge on" cx="-21.6" cy="29.1" r="12"/><text class="iso-badge-text on" x="-21.6" y="33.6" text-anchor="middle">5</text></g>
+                    <polygon class="iso-flash" points="58.5,-18.2 103.6,7.8 58.5,33.8 13.5,7.8"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.6;0.615;0.67;1" values="0;0;0.75;0;0"/></polygon>
+                    <g><rect class="iso-note" x="-75.8" y="315.4" width="296" height="145"/><text class="iso-note-text strong" x="-62.8" y="340.4" xml:space="preserve">percorso da PC a Server</text><text class="iso-note-text" x="-62.8" y="361.4" xml:space="preserve"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.94;0.98;0.999;1" values="1;1;0;0;1"/>1  PC</text><text class="iso-note-text" x="-62.8" y="382.4" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.15;0.17;0.94;0.98;1" values="0;0;1;1;0;0"/>2  Switch</text><text class="iso-note-text" x="-62.8" y="403.4" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.291;0.311;0.94;0.98;1" values="0;0;1;1;0;0"/>3  Router    instrada, porta 2</text><text class="iso-note-text" x="-62.8" y="424.4" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.415;0.435;0.94;0.98;1" values="0;0;1;1;0;0"/>4  Firewall  permette, regola 1</text><text class="iso-note-text" x="-62.8" y="445.4" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.6;0.62;0.94;0.98;1" values="0;0;1;1;0;0"/>5  Server    raggiunto</text></g>
+                    <path class="iso-mark" d="M-412.3 -62.0 H-398.3 M-405.3 -69.0 V-55.0"/>
+                    <path class="iso-mark" d="M-412.3 474.4 H-398.3 M-405.3 467.4 V481.4"/>
+                    <path class="iso-mark" d="M227.2 -62.0 H241.2 M234.2 -69.0 V-55.0"/>
+                    <path class="iso-mark" d="M227.2 474.4 H241.2 M234.2 467.4 V481.4"/>
+                    </svg>
+                    <!-- /drawing:ask -->
+                </div>
+                <figure class="wide">
+<div class="terminal"><span class="prompt">pixelcake&gt;</span> <span class="cmd">trace Portale-Clienti from Cliente-Remoto as web</span>
+Tracing route to Portale-Clienti (203.0.113.1) from Cliente-Remoto as web:
+  1  ○ Cliente-Remoto (PC)
+  2  ○ Internet (Cloud)  <span class="dim">— Internet is not simulated: traffic assumed to pass</span>
+  3  ○ FW-Edge (Firewall)  <span class="dim">— NAT: destination 203.0.113.1 → 172.16.0.10 (port forward 1); routed: 172.16.0.0/24 is on port 2; firewall FW-Edge: allowed by rule 1 (allow web from untrust to 172.16.0.10)</span>
+  4  ○ SW-DMZ (Switch)
+  5  ● Portale-Clienti (Server)
+<span class="dim">  note: Portale-Clienti is behind NAT: reached at 203.0.113.1, where FW-Edge publishes it (port forward 1)
+  note: Internet is not simulated: traffic assumed to pass
+  note: firewall FW-Edge: allowed by rule 1 (allow web from untrust to 172.16.0.10)</span>
+<span class="good">Trace complete: destination reached.</span>
+
+<span class="prompt">pixelcake&gt;</span> <span class="cmd">ping Portale-Clienti from Cliente-Remoto</span>
+Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
+<span class="bad">Ping failed (blocked): request: Internet does not carry private addresses: 172.16.0.10 is not reachable from outside: no port forward publishes it for ping
+  dropped at: Internet</span></div>
+                    <figcaption>
+                        <b>Niente di finto: è l'output del terminale integrato.</b>
+                        Sulla rete di esempio, un cliente su Internet raggiunge il portale pubblico via
+                        web, attraverso il NAT del firewall e la sua regola. Un ping non entra.
+                        Il terminale parla inglese anche quando l'app è in italiano.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="block tight grid verb" id="present" aria-labelledby="present-title">
+                <div class="verb-text">
+                    <span class="numeral" aria-hidden="true">03</span>
+                    <h2 id="present-title">Presenta</h2>
+                    <p>
+                        Metti via gli strumenti per disegnare e mostrala a chi non era nella stanza.
+                        Scegli due dispositivi sul disegno per fare una domanda, e guarda partire il pacchetto.
+                    </p>
+                    <p>
+                        Poi rompi qualcosa, un cavo o un dispositivo. Vedi subito se il traffico trova
+                        un'altra strada, e quali comunicazioni si interrompono. Il disegno non cambia.
+                    </p>
+                    <p>
+                        Finita la riunione, consegna il canvas come immagine, PNG o SVG, con la domanda,
+                        la risposta e i guasti scritti sotto.
+                    </p>
+                </div>
+                <div class="verb-drawing">
+                    <!-- drawing:present -->
+                    <svg class="iso" viewBox="-242 -70 655 552" data-still="10.6" role="img" aria-label="Due sedi unite da una linea principale, con un terzo router di riserva. Un pacchetto passa dalla linea principale; la linea viene tagliata, e il pacchetto successivo fa il giro dal router di riserva e arriva lo stesso.">
+                    <polygon class="iso-foot" points="0.0,52.0 387.3,275.6 171.1,400.4 -216.2,176.8"/>
+                    <polygon class="iso-left" points="-216.2,140.4 171.1,364.0 171.1,348.4 -216.2,124.8"/>
+                    <polygon class="iso-right" points="387.3,239.2 171.1,364.0 171.1,348.4 387.3,223.6"/>
+                    <polygon class="iso-board" points="0.0,0.0 387.3,223.6 171.1,348.4 -216.2,124.8"/>
+                    <g class="iso-dots"><circle cx="0.0" cy="31.2" r="1"/><circle cx="-27.0" cy="46.8" r="1"/><circle cx="-54.0" cy="62.4" r="1"/><circle cx="-81.1" cy="78.0" r="1"/><circle cx="-108.1" cy="93.6" r="1"/><circle cx="-135.1" cy="109.2" r="1"/><circle cx="-162.1" cy="124.8" r="1"/><circle cx="27.0" cy="46.8" r="1"/><circle cx="0.0" cy="62.4" r="1"/><circle cx="-27.0" cy="78.0" r="1"/><circle cx="-54.0" cy="93.6" r="1"/><circle cx="-81.1" cy="109.2" r="1"/><circle cx="-108.1" cy="124.8" r="1"/><circle cx="-135.1" cy="140.4" r="1"/><circle cx="54.0" cy="62.4" r="1"/><circle cx="27.0" cy="78.0" r="1"/><circle cx="0.0" cy="93.6" r="1"/><circle cx="-27.0" cy="109.2" r="1"/><circle cx="-54.0" cy="124.8" r="1"/><circle cx="-81.1" cy="140.4" r="1"/><circle cx="-108.1" cy="156.0" r="1"/><circle cx="81.1" cy="78.0" r="1"/><circle cx="54.0" cy="93.6" r="1"/><circle cx="27.0" cy="109.2" r="1"/><circle cx="0.0" cy="124.8" r="1"/><circle cx="-27.0" cy="140.4" r="1"/><circle cx="-54.0" cy="156.0" r="1"/><circle cx="-81.1" cy="171.6" r="1"/><circle cx="108.1" cy="93.6" r="1"/><circle cx="81.1" cy="109.2" r="1"/><circle cx="54.0" cy="124.8" r="1"/><circle cx="27.0" cy="140.4" r="1"/><circle cx="0.0" cy="156.0" r="1"/><circle cx="-27.0" cy="171.6" r="1"/><circle cx="-54.0" cy="187.2" r="1"/><circle cx="135.1" cy="109.2" r="1"/><circle cx="108.1" cy="124.8" r="1"/><circle cx="81.1" cy="140.4" r="1"/><circle cx="54.0" cy="156.0" r="1"/><circle cx="27.0" cy="171.6" r="1"/><circle cx="0.0" cy="187.2" r="1"/><circle cx="-27.0" cy="202.8" r="1"/><circle cx="162.1" cy="124.8" r="1"/><circle cx="135.1" cy="140.4" r="1"/><circle cx="108.1" cy="156.0" r="1"/><circle cx="81.1" cy="171.6" r="1"/><circle cx="54.0" cy="187.2" r="1"/><circle cx="27.0" cy="202.8" r="1"/><circle cx="0.0" cy="218.4" r="1"/><circle cx="189.1" cy="140.4" r="1"/><circle cx="162.1" cy="156.0" r="1"/><circle cx="135.1" cy="171.6" r="1"/><circle cx="108.1" cy="187.2" r="1"/><circle cx="81.1" cy="202.8" r="1"/><circle cx="54.0" cy="218.4" r="1"/><circle cx="27.0" cy="234.0" r="1"/><circle cx="216.2" cy="156.0" r="1"/><circle cx="189.1" cy="171.6" r="1"/><circle cx="162.1" cy="187.2" r="1"/><circle cx="135.1" cy="202.8" r="1"/><circle cx="108.1" cy="218.4" r="1"/><circle cx="81.1" cy="234.0" r="1"/><circle cx="54.0" cy="249.6" r="1"/><circle cx="243.2" cy="171.6" r="1"/><circle cx="216.2" cy="187.2" r="1"/><circle cx="189.1" cy="202.8" r="1"/><circle cx="162.1" cy="218.4" r="1"/><circle cx="135.1" cy="234.0" r="1"/><circle cx="108.1" cy="249.6" r="1"/><circle cx="81.1" cy="265.2" r="1"/><circle cx="270.2" cy="187.2" r="1"/><circle cx="243.2" cy="202.8" r="1"/><circle cx="216.2" cy="218.4" r="1"/><circle cx="189.1" cy="234.0" r="1"/><circle cx="162.1" cy="249.6" r="1"/><circle cx="135.1" cy="265.2" r="1"/><circle cx="108.1" cy="280.8" r="1"/><circle cx="297.2" cy="202.8" r="1"/><circle cx="270.2" cy="218.4" r="1"/><circle cx="243.2" cy="234.0" r="1"/><circle cx="216.2" cy="249.6" r="1"/><circle cx="189.1" cy="265.2" r="1"/><circle cx="162.1" cy="280.8" r="1"/><circle cx="135.1" cy="296.4" r="1"/><circle cx="324.2" cy="218.4" r="1"/><circle cx="297.2" cy="234.0" r="1"/><circle cx="270.2" cy="249.6" r="1"/><circle cx="243.2" cy="265.2" r="1"/><circle cx="216.2" cy="280.8" r="1"/><circle cx="189.1" cy="296.4" r="1"/><circle cx="162.1" cy="312.0" r="1"/><circle cx="351.3" cy="234.0" r="1"/><circle cx="324.2" cy="249.6" r="1"/><circle cx="297.2" cy="265.2" r="1"/><circle cx="270.2" cy="280.8" r="1"/><circle cx="243.2" cy="296.4" r="1"/><circle cx="216.2" cy="312.0" r="1"/><circle cx="189.1" cy="327.6" r="1"/></g>
+                    <polyline class="iso-cable" points="198.1,285.5 78.8,216.6"/>
+                    <polyline class="iso-cable" points="38.3,193.2 -103.6,111.3"/>
+                    <polyline class="iso-cable" points="38.3,193.2 78.8,216.6"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.32;0.35;0.95;0.99;1" values="1;1;0;0;1;1"/></polyline>
+                    <polyline class="iso-cable" points="130.6,246.5 229.7,189.3 157.6,147.7 85.6,106.1 -13.5,163.3"/>
+                    <polygon class="iso-foot" points="195.9,256.6 249.0,287.3 200.4,315.4 147.3,284.7"/>
+                    <polygon class="iso-foot" points="130.6,208.5 197.2,247.0 130.6,285.5 63.9,247.0"/>
+                    <polygon class="iso-foot" points="-13.5,125.3 53.1,163.8 -13.5,202.3 -80.2,163.8"/>
+                    <polygon class="iso-foot" points="157.6,109.7 224.3,148.2 157.6,186.7 91.0,148.2"/>
+                    <polygon class="iso-foot" points="-103.6,78.5 -45.9,111.8 -103.6,145.1 -161.2,111.8"/>
+                    <polyline class="iso-way" points="198.1,285.0 -103.6,110.8"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.3;0.34;0.98;1" values="1;1;0;0;1"/></polyline>
+                    <polyline class="iso-way" points="198.1,285.0 130.6,246.0 229.7,188.8 157.6,147.2 85.6,105.6 -13.5,162.8 -103.6,110.8" opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.42;0.46;0.94;0.98;1" values="0;0;1;1;0;0"/></polyline>
+                    <g class="iso-px"><animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.26;1" keyPoints="0;1;1" path="M198.1 285.0 L-103.6 110.8"/><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.26;0.29;1" values="1;1;0;0"/><polygon class="iso-left" points="-11.7,-1.0 0.0,5.7 0.0,-7.8 -11.7,-14.6"/><polygon class="iso-right" points="11.7,-1.0 0.0,5.7 0.0,-7.8 11.7,-14.6"/><polygon class="iso-top" points="0.0,-21.3 11.7,-14.6 0.0,-7.8 -11.7,-14.6"/></g>
+                    <g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.46;0.47;0.86;0.89;1" values="0;0;1;1;0;0"/><g class="iso-px"><animateMotion dur="12s" repeatCount="indefinite" calcMode="linear" keyTimes="0;0.46;0.86;1" keyPoints="0;0;1;1" path="M198.1 285.0 L130.6 246.0 L229.7 188.8 L157.6 147.2 L85.6 105.6 L-13.5 162.8 L-103.6 110.8"/><polygon class="iso-left" points="-11.7,-1.0 0.0,5.7 0.0,-7.8 -11.7,-14.6"/><polygon class="iso-right" points="11.7,-1.0 0.0,5.7 0.0,-7.8 11.7,-14.6"/><polygon class="iso-top" points="0.0,-21.3 11.7,-14.6 0.0,-7.8 -11.7,-14.6"/></g></g>
+                    <polygon class="iso-left" points="-148.6,111.8 -103.6,137.8 -103.6,54.6 -148.6,28.6"/><polygon class="iso-right" points="-58.5,111.8 -103.6,137.8 -103.6,54.6 -58.5,28.6"/><polygon class="iso-top end" points="-103.6,2.6 -58.5,28.6 -103.6,54.6 -148.6,28.6"/><polyline class="iso-detail" points="-64.8,101.6 -97.3,120.3"/><polyline class="iso-detail" points="-64.8,87.7 -97.3,106.4"/><polyline class="iso-detail" points="-64.8,73.8 -97.3,92.6"/><polyline class="iso-detail" points="-64.8,60.0 -97.3,78.7"/><polyline class="iso-detail" points="-64.8,46.1 -97.3,64.8"/>
+                    <polygon class="iso-left" points="103.6,148.2 157.6,179.4 157.6,153.4 103.6,122.2"/><polygon class="iso-right" points="211.7,148.2 157.6,179.4 157.6,153.4 211.7,122.2"/><polygon class="iso-top" points="157.6,91.0 211.7,122.2 157.6,153.4 103.6,122.2"/><polygon class="iso-port" points="113.5,144.6 118.9,147.7 118.9,140.4 113.5,137.3"/><polygon class="iso-port" points="123.4,150.3 128.8,153.4 128.8,146.1 123.4,143.0"/><polygon class="iso-port" points="133.3,156.0 138.7,159.1 138.7,151.8 133.3,148.7"/>
+                    <polygon class="iso-left" points="-67.5,163.8 -13.5,195.0 -13.5,169.0 -67.5,137.8"/><polygon class="iso-right" points="40.5,163.8 -13.5,195.0 -13.5,169.0 40.5,137.8"/><polygon class="iso-top" points="-13.5,106.6 40.5,137.8 -13.5,169.0 -67.5,137.8"/><polygon class="iso-port" points="-57.6,160.2 -52.2,163.3 -52.2,156.0 -57.6,152.9"/><polygon class="iso-port" points="-47.7,165.9 -42.3,169.0 -42.3,161.7 -47.7,158.6"/><polygon class="iso-port" points="-37.8,171.6 -32.4,174.7 -32.4,167.4 -37.8,164.3"/>
+                    <polygon class="iso-left" points="76.6,247.0 130.6,278.2 130.6,252.2 76.6,221.0"/><polygon class="iso-right" points="184.6,247.0 130.6,278.2 130.6,252.2 184.6,221.0"/><polygon class="iso-top" points="130.6,189.8 184.6,221.0 130.6,252.2 76.6,221.0"/><polygon class="iso-port" points="86.5,243.4 91.9,246.5 91.9,239.2 86.5,236.1"/><polygon class="iso-port" points="96.4,249.1 101.8,252.2 101.8,244.9 96.4,241.8"/><polygon class="iso-port" points="106.3,254.8 111.7,257.9 111.7,250.6 106.3,247.5"/>
+                    <polygon class="iso-left" points="159.9,284.7 200.4,308.1 200.4,269.1 159.9,245.7"/><polygon class="iso-right" points="236.4,287.3 200.4,308.1 200.4,269.1 236.4,248.3"/><polygon class="iso-top end" points="195.9,224.9 236.4,248.3 200.4,269.1 159.9,245.7"/><polygon class="iso-screen" points="166.2,281.1 194.1,297.2 194.1,272.7 166.2,256.6"/>
+                    <polygon class="iso-flash" points="-103.6,2.6 -58.5,28.6 -103.6,54.6 -148.6,28.6"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.26;0.275;0.33;0.86;0.875;0.93;1" values="0;0;0.75;0;0;0.75;0;0"/></polygon>
+                    <g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.33;0.36;0.94;0.98;1" values="0;0;1;1;0;0"/><circle class="iso-badge" cx="58.5" cy="204.4" r="11"/><path class="iso-cross" d="M54.0 199.9 L63.0 208.9 M63.0 199.9 L54.0 208.9"/></g>
+                    <g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.36;0.38;0.94;0.96;1" values="0;0;1;1;0;0"/><g><path class="iso-leader" d="M-7.0 399.4 L56.5 218.4"/><rect class="iso-note" x="-220.2" y="399.4" width="296" height="61"/><text class="iso-note-text strong" x="-207.2" y="424.4" xml:space="preserve">linea principale tagliata</text><text class="iso-note-text" x="-207.2" y="445.4" xml:space="preserve" opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.86;0.88;0.94;0.98;1" values="0;0;1;1;0;0"/>arriva lo stesso, dalla riserva</text></g></g>
+                    <path class="iso-mark" d="M-241.2 -62.0 H-227.2 M-234.2 -69.0 V-55.0"/>
+                    <path class="iso-mark" d="M-241.2 474.4 H-227.2 M-234.2 467.4 V481.4"/>
+                    <path class="iso-mark" d="M398.3 -62.0 H412.3 M405.3 -69.0 V-55.0"/>
+                    <path class="iso-mark" d="M398.3 474.4 H412.3 M405.3 467.4 V481.4"/>
+                    </svg>
+                    <!-- /drawing:present -->
+                </div>
+            </section>
+
+            <section class="block grid" aria-labelledby="app-title">
+                <div class="c-margin">
+                    <span class="label">L'app</span>
+                    <h2 id="app-title">Com'è fatta</h2>
+                </div>
+                <figure class="wide">
+                    <div class="shot">
+                        <img class="only-light" src="../assets/screenshot-it.png" width="1567" height="779" loading="lazy"
+                            alt="PixelCake con la rete di esempio di una piccola azienda sul canvas: uffici, Wi-Fi, una sala server, un portale pubblico dietro un firewall. Il terminale è aperto su un ping che funziona e su uno che si ferma, con il motivo.">
+                        <img class="only-dark" src="../assets/screenshot-it-dark.png" width="1567" height="779" loading="lazy"
+                            alt="PixelCake con la rete di esempio di una piccola azienda sul canvas: uffici, Wi-Fi, una sala server, un portale pubblico dietro un firewall. Il terminale è aperto su un ping che funziona e su uno che si ferma, con il motivo.">
+                    </div>
+                    <figcaption>
+                        <b>Disegna e chiedi.</b>
+                        La rete di esempio che arriva con l'app, e il terminale integrato.
+                    </figcaption>
+                </figure>
+                <figure class="wide">
+                    <div class="shot">
+                        <img class="only-light" src="../assets/present-it.png" width="1567" height="779" loading="lazy"
+                            alt="La modalità presentazione su una rete con due sedi: la linea principale tra le due è tagliata, la risposta arriva lo stesso passando dal router di riserva, e il pannello elenca le comunicazioni che passano da un'altra strada.">
+                        <img class="only-dark" src="../assets/present-it-dark.png" width="1567" height="779" loading="lazy"
+                            alt="La modalità presentazione su una rete con due sedi: la linea principale tra le due è tagliata, la risposta arriva lo stesso passando dal router di riserva, e il pannello elenca le comunicazioni che passano da un'altra strada.">
+                    </div>
+                    <figcaption>
+                        <b>Presenta.</b>
+                        La linea principale è tagliata: la risposta arriva lo stesso, dal router di riserva.
+                    </figcaption>
+                </figure>
+            </section>
+
+            <section class="block grid" aria-labelledby="honest-title">
+                <div class="c-margin">
+                    <span class="label">Limiti</span>
+                    <h2 id="honest-title">Cosa verifica, e cosa no</h2>
+                </div>
+                <div class="c-left">
+                    <div class="label ledger-head">Segue</div>
+                    <ul class="ledger yes">
+                        <li><span class="mark" aria-hidden="true">+</span><span>Cavi e porte, VLAN per VLAN</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Subnet, gateway e tabelle di instradamento, salto per salto</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Zone e regole del firewall, risposte comprese</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>NAT e inoltri: gli indirizzi privati non attraversano Internet</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Gli indirizzi assegnati dal DHCP, e i nomi chiesti al server DNS del disegno</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Un cavo o un dispositivo guasto, e la rotta di riserva che subentra</span></li>
+                    </ul>
+                </div>
+                <div class="c-right">
+                    <div class="label ledger-head muted">Non segue</div>
+                    <ul class="ledger">
+                        <li><span class="mark" aria-hidden="true">&ndash;</span><span>I singoli frame: niente ARP, niente tabella MAC, niente tempi</span></li>
+                        <li><span class="mark" aria-hidden="true">&ndash;</span><span>Il tempo: un indirizzo assegnato non scade, un nome non resta in cache</span></li>
+                        <li><span class="mark" aria-hidden="true">&ndash;</span><span>Instradamento dinamico e spanning tree</span></li>
+                        <li><span class="mark" aria-hidden="true">&ndash;</span><span>I numeri di porta: i servizi sono ping, web, email e DNS</span></li>
+                    </ul>
+                </div>
+                <p class="c-text muted">
+                    Serve a esplorare e spiegare una piccola rete. Non usare le sue risposte
+                    per validarne una reale. Quello che non è simulato lo dice, con una nota accanto alla risposta.
+                </p>
+            </section>
+
+            <section class="block grid" aria-labelledby="yours-title">
+                <div class="c-margin">
+                    <span class="label">Tuo</span>
+                    <h2 id="yours-title">Niente tra te e il disegno</h2>
+                </div>
+                <div class="third t1">
+                    <h3>Nel tuo browser</h3>
+                    <p>Niente da installare, e nessun server dietro. Apri la pagina e disegna.</p>
+                </div>
+                <div class="third t2">
+                    <h3>I tuoi file</h3>
+                    <p>
+                        Un progetto è un file <code>.pixelcake.json</code> sul tuo disco.
+                        Nessun account, e non si carica niente da nessuna parte.
+                    </p>
+                </div>
+                <div class="third t3">
+                    <h3>Open source</h3>
+                    <p>
+                        Rilasciato con licenza AGPL-3.0. Leggilo, usalo, modificalo:
+                        <a href="https://github.com/pixelcake-dev" target="_blank" rel="noopener">github.com/pixelcake-dev</a>.
+                    </p>
+                </div>
+            </section>
+
+            <section class="block closing grid" aria-labelledby="try-title">
+                <div class="c-margin"><span class="label">Inizia</span></div>
+                <h2 class="statement" id="try-title">Provalo su una rete già disegnata.</h2>
+                <p class="c-text">
+                    Dalla schermata di benvenuto carichi con un clic una piccola azienda: uffici e Wi-Fi in due VLAN,
+                    una sala server, un portale pubblico in DMZ dietro un firewall. Chiedile qualcosa.
+                </p>
+                <div class="actions">
+                    <span class="button soon" aria-disabled="true">App in arrivo</span>
+                    <a class="button quiet" href="./why.html">Perché lo sto sviluppando</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="grid">
+            <div class="col">
+                <span class="label">PixelCake</span>
+                Una rete, un pezzo alla volta.
+            </div>
+            <div class="col">
+                <span class="label">Codice</span>
+                <a href="https://github.com/pixelcake-dev" target="_blank" rel="noopener">github.com/pixelcake-dev</a><br>
+                AGPL-3.0
+            </div>
+            <div class="col">
+                <span class="label">Contatti</span>
+                <a href="mailto:pixelcake.dev@gmail.com">pixelcake.dev@gmail.com</a>
+            </div>
+            <div class="col">
+                <span class="label">Lingua</span>
+                Il sito è in italiano e in inglese, e così l'app: si passa dall'una all'altra con un clic.
+                Il terminale dell'app parla inglese.
+                <div class="lang" role="group" aria-label="Lingua">
+                    <a href="../index.html" hreflang="en" lang="en" title="English" aria-label="English">EN</a>
+                    <span lang="it" title="Italiano" aria-current="true">IT</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
