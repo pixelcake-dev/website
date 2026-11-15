@@ -161,6 +161,7 @@
                         <li>Firewall zones and ordered rules</li>
                         <li>NAT towards the Internet, and port forwards for what is reached from it</li>
                         <li>DHCP for what takes its address by itself, DNS to call a device by name</li>
+                        <li>Named areas behind groups of devices, and a note on any device</li>
                     </ul>
                 </div>
                 <div class="verb-drawing">
@@ -258,20 +259,20 @@
                     <!-- /drawing:ask -->
                 </div>
                 <figure class="wide">
-<div class="terminal"><span class="prompt">pixelcake&gt;</span> <span class="cmd">trace Portale-Clienti from Cliente-Remoto as web</span>
-Tracing route to Portale-Clienti (203.0.113.1) from Cliente-Remoto as web:
-  1  ○ Cliente-Remoto (PC)
+<div class="terminal"><span class="prompt">pixelcake&gt;</span> <span class="cmd">trace Customer-Portal from Remote-Customer as web</span>
+Tracing route to Customer-Portal (203.0.113.1) from Remote-Customer as web:
+  1  ○ Remote-Customer (PC)
   2  ○ Internet (Cloud)  <span class="dim">— Internet is not simulated: traffic assumed to pass</span>
   3  ○ FW-Edge (Firewall)  <span class="dim">— NAT: destination 203.0.113.1 → 172.16.0.10 (port forward 1); routed: 172.16.0.0/24 is on port 2; firewall FW-Edge: allowed by rule 1 (allow web from untrust to 172.16.0.10)</span>
   4  ○ SW-DMZ (Switch)
-  5  ● Portale-Clienti (Server)
-<span class="dim">  note: Portale-Clienti is behind NAT: reached at 203.0.113.1, where FW-Edge publishes it (port forward 1)
+  5  ● Customer-Portal (Server)
+<span class="dim">  note: Customer-Portal is behind NAT: reached at 203.0.113.1, where FW-Edge publishes it (port forward 1)
   note: Internet is not simulated: traffic assumed to pass
   note: firewall FW-Edge: allowed by rule 1 (allow web from untrust to 172.16.0.10)</span>
 <span class="good">Trace complete: destination reached.</span>
 
-<span class="prompt">pixelcake&gt;</span> <span class="cmd">ping Portale-Clienti from Cliente-Remoto</span>
-Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
+<span class="prompt">pixelcake&gt;</span> <span class="cmd">ping Customer-Portal from Remote-Customer</span>
+Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
 <span class="bad">Ping failed (blocked): request: Internet does not carry private addresses: 172.16.0.10 is not reachable from outside: no port forward publishes it for ping
   dropped at: Internet</span></div>
                     <figcaption>
@@ -357,9 +358,9 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
                 <figure class="wide">
                     <div class="shot">
                         <img class="only-light" src="./assets/present.png" width="1567" height="779" loading="lazy"
-                            alt="Presentation mode on a network of two sites: the main line between them is cut, the answer still arrives through the backup router, and the panel lists which exchanges take another way.">
+                            alt="Presentation mode on a network of two sites: the main line between them is cut, the answer still arrives through the backup router, and the panel lists which exchanges take another path.">
                         <img class="only-dark" src="./assets/present-dark.png" width="1567" height="779" loading="lazy"
-                            alt="Presentation mode on a network of two sites: the main line between them is cut, the answer still arrives through the backup router, and the panel lists which exchanges take another way.">
+                            alt="Presentation mode on a network of two sites: the main line between them is cut, the answer still arrives through the backup router, and the panel lists which exchanges take another path.">
                     </div>
                     <figcaption>
                         <b>Present.</b>
@@ -454,7 +455,7 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
             </div>
             <div class="col">
                 <span class="label">Language</span>
-                The interface is in Italian for now. The terminal speaks English.
+                The interface is in English and in Italian, one click apart. The terminal speaks English.
             </div>
         </footer>
     </div>
