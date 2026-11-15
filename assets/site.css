@@ -605,6 +605,10 @@ figure.wide > figcaption {
     border-bottom: 1px solid var(--hair);
 }
 
+.pixels + p {
+    margin-top: 18px;
+}
+
 .pixels li::before {
     content: '';
     position: absolute;

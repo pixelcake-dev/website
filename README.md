@@ -14,6 +14,7 @@ Static pages, with nothing to build, in English at the root and in Italian in `i
 
 - `index.html`, `it/index.html`: what PixelCake is and what it does
 - `why.html`, `it/why.html`: why I am building it
+- `privacy.html`, `it/privacy.html`: what the site and the app keep about a visitor, linked in the footer of every page
 - `assets/`, shared by both languages: the style sheet, a small script (light and dark theme, the language, the drawings), the logo, and pictures of the app in both themes and both languages (`screenshot-it.png`, `present-it.png`… are the Italian ones)
 - `assets/fonts/`: the two typefaces, Inter and JetBrains Mono, served from the site itself, each with its licence
 - `tools/drawings.py`: draws the five illustrations and writes them into the pages, each in the language of its page
