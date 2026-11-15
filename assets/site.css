@@ -1102,10 +1102,10 @@ footer .label {
         grid-column: 2 !important;
     }
 
-    /* (the links give way, the theme and the language stay; the app has its
-       button further down) */
+    /* (the links and the button of the app give way, the theme and the
+       language stay; the app has its button just below, in the hero) */
     .nav > a:not(.button),
-    .nav > .button.soon {
+    .nav > .button {
         display: none;
     }
 
