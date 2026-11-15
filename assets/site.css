@@ -39,6 +39,38 @@
         U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* The arrow (→) is in neither Latin set: it comes from the same two typefaces,
+   in a file of its own, so that the buttons, the notes of the drawings and the
+   terminal draw it as the rest of their words, and never in a font of the computer. */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('./fonts/inter-arrow-wght-normal.woff2') format('woff2');
+    unicode-range: U+2192;
+}
+
+/* (one rule for each weight of the Latin sets: a browser joins the pieces of a
+   typeface only when they declare the same weight; the file is the same) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('./fonts/jetbrains-mono-arrow-wght-normal.woff2') format('woff2');
+    unicode-range: U+2192;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./fonts/jetbrains-mono-arrow-wght-normal.woff2') format('woff2');
+    unicode-range: U+2192;
+}
+
 /* The colours are those of the logo: orange, graphite for the text on
    white, ice white for the text on black. The greys lean to the slate of
    the logo, never to yellow. */
