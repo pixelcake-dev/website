@@ -20,6 +20,8 @@ Two static pages, with nothing to build:
 
 The pages load nothing from other sites: no trackers, no cookies, no fonts from elsewhere.
 
+The site is served at https://pixelcake.dev by GitHub Pages, from the root of `main`: `CNAME` names the domain, and `.nojekyll` has the files served as they are.
+
 To look at the site, open `index.html` in a browser. To change a drawing, edit `tools/drawings.py` and run it:
 
 ```bash

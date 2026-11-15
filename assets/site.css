@@ -277,6 +277,20 @@ figure.wide {
     color: var(--ink);
 }
 
+/* A button for what is not there yet: the app before it is online */
+.button.soon,
+.button.soon:hover {
+    background: none;
+    border-style: dashed;
+    border-color: var(--hair);
+    color: var(--muted);
+    cursor: default;
+}
+
+.button.soon::after {
+    content: none;
+}
+
 .nav .button {
     padding: 7px 10px;
     gap: 10px;
