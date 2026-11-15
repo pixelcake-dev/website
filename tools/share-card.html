@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- The picture a link to the site shows when it is shared (1200 x 630), in the
+     light theme. tools/share-card.py fills in the words and the drawing of each
+     language, and has a Chrome without a window take the picture:
+     assets/share-en.png, assets/share-it.png. -->
+<html lang="{{lang}}" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PixelCake - share card</title>
+    <link rel="stylesheet" href="../assets/site.css">
+    <style>
+        html,
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+        }
+
+        .card {
+            position: relative;
+            width: 1200px;
+            height: 630px;
+            padding: 48px 56px 0;
+            background: var(--paper);
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 22px;
+            border-bottom: 1px solid var(--ink);
+        }
+
+        .card-top img {
+            width: 208px;
+            height: 60px;
+        }
+
+        .card-top .address {
+            font-family: var(--mono);
+            font-size: 22px;
+            color: var(--muted);
+        }
+
+        /* (the words in the middle of what is left under the rule, whatever their number of lines) */
+        .card-words {
+            position: absolute;
+            left: 56px;
+            top: 131px;
+            bottom: 0;
+            width: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-words h1 {
+            font-size: 62px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .card-words .strap {
+            margin: 0;
+            font-size: 19px;
+        }
+
+        .card-drawing {
+            position: absolute;
+            right: 40px;
+            top: 150px;
+            width: 590px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-top">
+            <img src="../assets/pixelcake-orizzontale-colore.svg" alt="PixelCake">
+            <span class="address">pixelcake.dev</span>
+        </div>
+        <div class="card-words">
+            <h1>{{line}}</h1>
+            <p class="strap">{{strap}}</p>
+        </div>
+        <div class="card-drawing">
+            {{drawing}}
+        </div>
+    </div>
+    <script>
+        // The drawing stands still on the frame that says the most
+        document.querySelectorAll('svg.iso').forEach(function (svg) {
+            svg.pauseAnimations();
+            svg.setCurrentTime(parseFloat(svg.getAttribute('data-still')) || 0);
+        });
+    </script>
+</body>
+
+</html>

@@ -18,6 +18,8 @@ Static pages, with nothing to build, in English at the root and in Italian in `i
 - `assets/`, shared by both languages: the style sheet, a small script (light and dark theme, the language, the drawings), the logo, and pictures of the app in both themes and both languages (`screenshot-it.png`, `present-it.png`… are the Italian ones)
 - `assets/fonts/`: the two typefaces, Inter and JetBrains Mono, served from the site itself, each with its licence
 - `tools/drawings.py`: draws the five illustrations and writes them into the pages, each in the language of its page
+- `tools/share-card.html`, `tools/share-card.py`: the picture a shared link shows, 1200 x 630, one for each language (`assets/share-en.png`, `assets/share-it.png`), taken by Chrome without a window
+- `tools/check-previews.py`: checks the tags of a shared link on every page (Open Graph and Twitter), and the cards they name
 
 `EN | IT` in the masthead and in the footer leads to the same page in the other language. Every page names its
 other language (`hreflang`) and its own address (`canonical`). Only the English home page moves a visitor: on a
@@ -32,6 +34,13 @@ To look at the site, open `index.html` in a browser. To change a drawing, edit `
 
 ```bash
 python tools/drawings.py
+```
+
+After a change to the words or the drawing of the home page, make the cards again and check the tags:
+
+```bash
+python tools/share-card.py
+python tools/check-previews.py
 ```
 
 ## Licence
