@@ -129,6 +129,14 @@ body {
     background: var(--paper);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular figures only where figures stand in a column: the numbers of the
+   three things, one under the other, and the table of states. In running text
+   they would also widen the hyphens of Inter («Phil - pje», «Wi - Fi»). The
+   terminal and the notes are in JetBrains Mono, whose figures are all one width. */
+.numeral,
+.states {
     font-feature-settings: 'tnum';
 }
 
