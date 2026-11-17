@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pixelcake.dev/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelcake.dev/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/"/>
+  </url>
+  <url>
+    <loc>https://pixelcake.dev/it/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelcake.dev/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/"/>
+  </url>
+  <url>
+    <loc>https://pixelcake.dev/why.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelcake.dev/why.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/why.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/why.html"/>
+  </url>
+  <url>
+    <loc>https://pixelcake.dev/it/why.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelcake.dev/why.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/why.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/why.html"/>
+  </url>
+  <url>
+    <loc>https://pixelcake.dev/privacy.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelcake.dev/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://pixelcake.dev/it/privacy.html</loc>
+    <lastmod>2026-11-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelcake.dev/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelcake.dev/it/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelcake.dev/privacy.html"/>
+  </url>
+</urlset>
