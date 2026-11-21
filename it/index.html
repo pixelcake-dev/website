@@ -179,6 +179,7 @@
                         <li>NAT verso Internet, e inoltri per ciò che va raggiunto da fuori</li>
                         <li>DHCP per chi prende l'indirizzo da solo, DNS per chiamare un dispositivo per nome</li>
                         <li>Riquadri con un nome dietro i gruppi di dispositivi, e una nota su qualunque dispositivo</li>
+                        <li>Annulla e ripeti, e più canvas in un progetto</li>
                     </ul>
                 </div>
                 <div class="verb-drawing">
@@ -314,6 +315,11 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
                         un'altra strada, e quali comunicazioni si interrompono. Il disegno non cambia.
                     </p>
                     <p>
+                        Scrivici sopra mentre parli: la modalità appunti stende un foglio trasparente sul canvas,
+                        per frecce, cerchi e qualche parola a mano. Li prepari prima, li aggiungi durante;
+                        restano con il canvas.
+                    </p>
+                    <p>
                         Finita la riunione, consegna il canvas come immagine, PNG o SVG, con la domanda,
                         la risposta e i guasti scritti sotto.
                     </p>
@@ -397,7 +403,8 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
                     <ul class="ledger yes">
                         <li><span class="mark" aria-hidden="true">+</span><span>Cavi e porte, VLAN per VLAN</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>Subnet, gateway e tabelle di instradamento, salto per salto</span></li>
-                        <li><span class="mark" aria-hidden="true">+</span><span>Zone e regole del firewall, risposte comprese</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Un indirizzo scritto su due dispositivi: tutti e due segnati in conflitto</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Regole dei router e dei firewall, zone del firewall, risposte comprese</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>NAT e inoltri: gli indirizzi privati non attraversano Internet</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>Gli indirizzi assegnati dal DHCP, e i nomi chiesti al server DNS del disegno</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>Un cavo o un dispositivo guasto, e la rotta di riserva che subentra</span></li>
@@ -413,7 +420,7 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
                     </ul>
                 </div>
                 <p class="c-text muted">
-                    Serve a esplorare e spiegare una piccola rete. Non usare le sue risposte
+                    PixelCake è una beta. Serve a esplorare e spiegare una piccola rete. Non usare le sue risposte
                     per validarne una reale. Quello che non è simulato lo dice, con una nota accanto alla risposta.
                 </p>
             </section>
@@ -449,6 +456,7 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
                 <p class="c-text">
                     Dalla schermata di benvenuto carichi con un clic una piccola azienda: uffici e Wi-Fi in due VLAN,
                     una sala server, un portale pubblico in DMZ dietro un firewall. Chiedile qualcosa.
+                    Alla prima visita, un breve tour guidato ti mostra dove sta ogni cosa.
                 </p>
                 <div class="actions">
                     <a class="button" href="https://app.pixelcake.dev/">Apri l'app</a>
@@ -461,7 +469,8 @@ Pinging Portale-Clienti (172.16.0.10) from Cliente-Remoto...
             <div class="col">
                 <span class="label">PixelCake</span>
                 Una rete, un pezzo alla volta.<br>
-                <a href="https://app.pixelcake.dev/docs/it/">Documentazione</a>
+                <a href="https://app.pixelcake.dev/docs/it/">Documentazione</a><br>
+                <a href="https://github.com/pixelcake-dev/pixelcake/releases" target="_blank" rel="noopener">Novità</a>
             </div>
             <div class="col">
                 <span class="label">Codice</span>

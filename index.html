@@ -179,6 +179,7 @@
                         <li>NAT towards the Internet, and port forwards for what is reached from it</li>
                         <li>DHCP for what takes its address by itself, DNS to call a device by name</li>
                         <li>Named areas behind groups of devices, and a note on any device</li>
+                        <li>Undo and redo, and several boards in one project</li>
                     </ul>
                 </div>
                 <div class="verb-drawing">
@@ -313,6 +314,11 @@ Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
                         finds another path, and which exchanges stop working. Nothing in the drawing changes.
                     </p>
                     <p>
+                        Write on it while you talk: annotation mode lays a transparent sheet over the board,
+                        for arrows, circles and a few words by hand. Prepare them before, add to them during;
+                        they stay with the board.
+                    </p>
+                    <p>
                         When the meeting is over, hand the board over as an image, PNG or SVG, with the
                         question, the answer and what was broken written under it.
                     </p>
@@ -396,7 +402,8 @@ Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
                     <ul class="ledger yes">
                         <li><span class="mark" aria-hidden="true">+</span><span>Cables and ports, VLAN by VLAN</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>Subnets, gateways and routing tables, hop by hop</span></li>
-                        <li><span class="mark" aria-hidden="true">+</span><span>Firewall zones and rules, replies included</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>An address typed on two devices: both are marked in conflict</span></li>
+                        <li><span class="mark" aria-hidden="true">+</span><span>Router and firewall rules, firewall zones, replies included</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>NAT and port forwards: private addresses do not cross the Internet</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>DHCP leases, and names looked up on the DNS server of the drawing</span></li>
                         <li><span class="mark" aria-hidden="true">+</span><span>A broken cable or device, and the backup route that takes over</span></li>
@@ -412,7 +419,7 @@ Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
                     </ul>
                 </div>
                 <p class="c-text muted">
-                    It is good for exploring and explaining a small network. Do not use its answers
+                    PixelCake is a beta. It is good for exploring and explaining a small network. Do not use its answers
                     to validate a real one. Whatever is not simulated says so, in a note next to the answer.
                 </p>
             </section>
@@ -448,6 +455,7 @@ Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
                 <p class="c-text">
                     The welcome screen loads a small company in one click: offices and Wi-Fi in two VLANs,
                     a room of servers, a public portal in a DMZ behind a firewall. Ask it something.
+                    On a first visit, a short guided tour shows where everything is.
                 </p>
                 <div class="actions">
                     <a class="button" href="https://app.pixelcake.dev/">Open the app</a>
@@ -460,7 +468,8 @@ Pinging Customer-Portal (172.16.0.10) from Remote-Customer...
             <div class="col">
                 <span class="label">PixelCake</span>
                 Infrastructure, piece by piece.<br>
-                <a href="https://app.pixelcake.dev/docs/">Documentation</a>
+                <a href="https://app.pixelcake.dev/docs/">Documentation</a><br>
+                <a href="https://github.com/pixelcake-dev/pixelcake/releases" target="_blank" rel="noopener">What is new</a>
             </div>
             <div class="col">
                 <span class="label">Source</span>
